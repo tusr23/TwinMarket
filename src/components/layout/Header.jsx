@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   Menu,
   Play,
@@ -12,10 +12,7 @@ import {
   X,
   ChevronDown,
   Palette,
-  BookOpen,
-  Search,
-  Sparkles,
-  Settings
+  BookOpen
 } from 'lucide-react';
 import { useBusiness } from '../../context/BusinessContext.jsx';
 import { MARKET_SCENARIOS, UI_THEMES } from '../../simulation/defaultData.js';
@@ -34,10 +31,8 @@ export default function Header({ onMenuToggle }) {
     resetToDemo
   } = useBusiness();
 
-  const navigate = useNavigate();
   const [showActivityModal, setShowActivityModal] = useState(false);
   const [isRunningSim, setIsRunningSim] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
 
   const activeScenario = business.activeScenarioId
     ? MARKET_SCENARIOS.find((s) => s.id === business.activeScenarioId)
@@ -51,71 +46,75 @@ export default function Header({ onMenuToggle }) {
     }, 600);
   };
 
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate('/advisor');
-    }
-  };
-
   const financials = simulation.financials;
   const healthScore = simulation.risks?.businessHealthScore || 80;
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-[#0E0D14]/90 backdrop-blur-2xl border-b border-white/[0.07] px-4 lg:px-8 py-3.5 transition-colors duration-300">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          {/* Left: Greeting matching Helios image */}
-          <div className="flex items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <button
-                onClick={onMenuToggle}
-                className="p-2 rounded-xl text-zinc-400 hover:text-white hover:bg-white/[0.06] lg:hidden"
-                aria-label="Open sidebar"
-              >
-                <Menu className="w-5 h-5" />
-              </button>
-              <div>
-                <h1 className="font-extrabold text-white text-lg lg:text-xl tracking-tight flex items-center gap-2">
-                  Welcome, Nadia
-                  <span className="hidden sm:inline-block text-[11px] font-normal px-2.5 py-0.5 rounded-full bg-white/[0.06] text-zinc-300 border border-white/10">
-                    {business.name}
-                  </span>
+      <header className="sticky top-0 z-30 bg-[var(--bg-base)]/90 backdrop-blur-xl border-b border-[var(--border-subtle)] px-4 lg:px-8 py-3.5 transition-colors duration-300">
+        <div className="flex items-center justify-between gap-4">
+          {/* Left: Mobile Toggle & Title */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={onMenuToggle}
+              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 lg:hidden"
+              aria-label="Open sidebar"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+            <div className="hidden sm:block">
+              <div className="flex items-center gap-2">
+                <h1 className="font-bold text-white text-base lg:text-lg tracking-tight">
+                  {business.name}
                 </h1>
-                <p className="text-xs text-zinc-400 mt-0.5">
-                  Here's your investment portfolio & virtual market overview
-                </p>
+                <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--bg-card)] text-slate-300 border border-[var(--border-card)] font-medium">
+                  {business.categoryName}
+                </span>
+                {activeScenario && (
+                  <span className="hidden md:inline-flex items-center gap-1.5 text-xs px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 animate-pulse font-semibold">
+                    <AlertTriangle className="w-3 h-3 text-rose-400" />
+                    {activeScenario.title}
+                  </span>
+                )}
               </div>
             </div>
-
-            {activeScenario && (
-              <span className="md:hidden flex items-center gap-1.5 text-[10px] px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/30 font-semibold">
-                {activeScenario.title}
-              </span>
-            )}
           </div>
 
-          {/* Right: Search Pill, Bell, Settings, and Profile Capsule matching image */}
-          <div className="flex items-center flex-wrap gap-2.5 md:justify-end">
-            {/* Search Pill: "Ask helios.ai anything" */}
-            <form onSubmit={handleSearchSubmit} className="relative hidden sm:block">
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Ask helios.ai anything"
-                className="w-48 lg:w-60 bg-[#161520] border border-white/10 rounded-full pl-9 pr-4 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-[#E087B7]/60 transition-all font-sans"
-              />
-              <Sparkles className="w-3.5 h-3.5 text-[#E087B7] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            </form>
+          {/* Center / Metrics Strip (Hidden on small mobile) */}
+          <div className="hidden xl:flex items-center gap-6 text-xs neu-inset px-5 py-2.5 rounded-xl border border-[var(--border-subtle)]">
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Revenue / Mo</span>
+              <span className="font-bold text-white text-xs">{formatCurrency(financials.totalRevenue)}</span>
+            </div>
+            <div className="w-px h-6 bg-slate-800/80 shadow-sm" />
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Net Profit</span>
+              <span className={`font-bold text-xs ${financials.netProfit >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+                {formatCurrency(financials.netProfit)}
+                <span className="text-[10px] ml-1 opacity-80">({financials.netProfitMargin}%)</span>
+              </span>
+            </div>
+            <div className="w-px h-6 bg-slate-800/80 shadow-sm" />
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Liquid Cash</span>
+              <span className="font-bold text-cyanAccent-400 text-xs">{formatCurrency(business.currentCash)}</span>
+            </div>
+            <div className="w-px h-6 bg-slate-800/80 shadow-sm" />
+            <div>
+              <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Health Score</span>
+              <span className="font-bold text-brand-400 text-xs">{healthScore}/100</span>
+            </div>
+          </div>
 
-            {/* Theme Switcher Pill */}
+          {/* Right: Actions */}
+          <div className="flex items-center gap-2.5">
+            {/* Theme Palette Switcher */}
             <div className="relative flex items-center">
               <select
                 value={theme}
                 onChange={(e) => setTheme(e.target.value)}
-                className="bg-[#161520] border border-white/10 text-zinc-300 text-xs rounded-full pl-7 pr-3 py-2 font-medium focus:outline-none cursor-pointer appearance-none transition-colors"
-                title="Change UI Theme"
+                className="bg-[var(--bg-card)] border border-[var(--border-card)] text-slate-200 text-xs rounded-lg pl-7 pr-3 py-2 font-medium focus:ring-1 focus:ring-brand-500 focus:outline-none cursor-pointer appearance-none transition-colors"
+                title="Change UI Theme Palette"
               >
                 {UI_THEMES.map((t) => (
                   <option key={t.id} value={t.id}>
@@ -123,14 +122,14 @@ export default function Header({ onMenuToggle }) {
                   </option>
                 ))}
               </select>
-              <Palette className="w-3.5 h-3.5 text-[#E087B7] absolute left-2.5 pointer-events-none" />
+              <Palette className="w-3.5 h-3.5 text-brand-400 absolute left-2 pointer-events-none" />
             </div>
 
-            {/* Currency Pill */}
+            {/* Currency Selector */}
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
-              className="bg-[#161520] border border-white/10 text-zinc-300 text-xs rounded-full px-3 py-2 font-mono font-medium focus:outline-none cursor-pointer transition-colors"
+              className="bg-[var(--bg-card)] border border-[var(--border-card)] text-slate-300 text-xs rounded-lg px-2.5 py-2 font-mono font-medium focus:ring-1 focus:ring-brand-500 focus:outline-none cursor-pointer transition-colors"
             >
               <option value="INR">₹ INR</option>
               <option value="USD">$ USD</option>
@@ -138,40 +137,41 @@ export default function Header({ onMenuToggle }) {
               <option value="GBP">£ GBP</option>
             </select>
 
-            {/* Notification Bell Circle */}
+            {/* Run Market Simulation Button */}
+            <button
+              onClick={handleSimulateClick}
+              disabled={isRunningSim}
+              className="relative inline-flex items-center gap-2 px-3.5 py-2 rounded-lg font-semibold text-xs text-white bg-gradient-to-r from-brand-600 via-brand-500 to-cyanAccent-400 hover:opacity-95 shadow-lg shadow-brand-500/25 active:scale-95 transition-all disabled:opacity-60 cursor-pointer"
+              title="Recalculate customer demand, competitor moves, and market balance"
+            >
+              <Play className={`w-3.5 h-3.5 fill-current ${isRunningSim ? 'animate-spin' : ''}`} />
+              <span className="hidden sm:inline">
+                {isRunningSim ? 'Simulating...' : 'RUN MARKET SIMULATION'}
+              </span>
+              <span className="sm:hidden">Run Sim</span>
+            </button>
+
+            {/* Guide & How to Use Quicklink */}
+            <NavLink
+              to="/guide"
+              className="relative px-3 py-2 rounded-xl neu-btn text-slate-300 hover:text-white transition-all cursor-pointer flex items-center gap-1.5"
+              title="Platform Guide & How to Use"
+            >
+              <BookOpen className="w-4 h-4 text-emerald-400" />
+              <span className="hidden lg:inline text-xs font-semibold text-slate-200">Guide</span>
+            </NavLink>
+
+            {/* Activity Log / Notifications */}
             <button
               onClick={() => setShowActivityModal(true)}
-              className="relative w-9 h-9 rounded-full bg-[#161520] border border-white/10 text-zinc-300 hover:text-white hover:border-[#E087B7]/40 flex items-center justify-center transition-all cursor-pointer"
+              className="relative p-2.5 rounded-xl neu-btn text-slate-300 hover:text-white transition-all cursor-pointer"
               aria-label="View recent activities"
-              title="Notifications & Activity Log"
             >
               <Bell className="w-4 h-4" />
               {business.activityLog?.length > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-[#E087B7] shadow-[0_0_8px_#E087B7] animate-pulse" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand-500 shadow-[0_0_8px_rgba(var(--color-brand-500),0.8)] animate-pulse" />
               )}
             </button>
-
-            {/* Settings Gear Circle */}
-            <NavLink
-              to="/settings"
-              className="w-9 h-9 rounded-full bg-[#161520] border border-white/10 text-zinc-300 hover:text-white hover:border-[#E087B7]/40 flex items-center justify-center transition-all cursor-pointer"
-              title="Platform Settings"
-            >
-              <Settings className="w-4 h-4" />
-            </NavLink>
-
-            {/* User Profile Capsule (exact replica from screenshot) */}
-            <div className="flex items-center gap-2.5 bg-[#161520] border border-white/10 rounded-full pl-1.5 pr-3.5 py-1">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80"
-                alt="Nadia Rachel"
-                className="w-7 h-7 rounded-full object-cover border border-[#E087B7]/40"
-              />
-              <div className="hidden xl:block text-left">
-                <span className="text-xs font-bold text-white block leading-tight">Nadia Rachel</span>
-                <span className="text-[10px] text-zinc-400 block leading-none">rachel_helios@gmail.com</span>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -195,15 +195,15 @@ export default function Header({ onMenuToggle }) {
       {/* Activity Log Modal */}
       {showActivityModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-fade-in">
-          <div className="helios-card rounded-2xl max-w-lg w-full p-6 shadow-2xl relative max-h-[85vh] flex flex-col border border-white/10">
-            <div className="flex items-center justify-between pb-4 border-b border-white/[0.08]">
+          <div className="neu-card rounded-2xl max-w-lg w-full p-6 shadow-2xl relative max-h-[85vh] flex flex-col border border-[var(--neu-border)]">
+            <div className="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)]">
               <div className="flex items-center gap-2">
-                <Bell className="w-5 h-5 text-[#E087B7]" />
+                <Bell className="w-5 h-5 text-brand-400" />
                 <h3 className="text-base font-bold text-white">Recent Business Activities</h3>
               </div>
               <button
                 onClick={() => setShowActivityModal(false)}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg text-slate-400 hover:text-white neu-btn transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -214,13 +214,13 @@ export default function Header({ onMenuToggle }) {
                 business.activityLog.map((act) => (
                   <div
                     key={act.id}
-                    className="p-3.5 rounded-xl bg-[#14131C] border border-white/[0.06] flex items-start justify-between gap-3"
+                    className="p-3.5 rounded-xl neu-inset flex items-start justify-between gap-3"
                   >
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="text-xs font-semibold text-white">{act.title}</span>
                         {act.impact && (
-                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[#E087B7]/20 text-[#E087B7] border border-[#E087B7]/30">
+                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded neu-pill text-brand-300 border border-brand-500/30">
                             {act.impact}
                           </span>
                         )}
@@ -239,10 +239,10 @@ export default function Header({ onMenuToggle }) {
               )}
             </div>
 
-            <div className="pt-3 border-t border-white/[0.08] flex justify-end">
+            <div className="pt-3 border-t border-[var(--border-subtle)] flex justify-end">
               <button
                 onClick={() => setShowActivityModal(false)}
-                className="px-4 py-2 text-xs font-medium bg-[#1A1925] hover:bg-[#201F2E] text-white rounded-full transition-all cursor-pointer border border-white/10"
+                className="px-4 py-2 text-xs font-medium neu-btn text-white rounded-xl transition-all cursor-pointer"
               >
                 Close Log
               </button>
@@ -253,3 +253,4 @@ export default function Header({ onMenuToggle }) {
     </>
   );
 }
+

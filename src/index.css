@@ -4,44 +4,11 @@
 
 @layer base {
   /* =========================================================
-     HELIOS LUXE PLUM (Dribbble Pro Dark Luxe Default)
+     DARK NEUMORPHISM (Soft UI) THEME SYSTEM
      ========================================================= */
-  :root, [data-theme="helios-mauve"] {
-    color-scheme: dark;
-    --bg-deep: #0e0d14;
-    --bg-base: #13121a;
-    --bg-card: #181723;
-    --bg-surface-light: #201f2e;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-card: rgba(224, 135, 183, 0.16);
-    --border-hover: rgba(224, 135, 183, 0.45);
 
-    /* Neumorphic Dual Shadows & Glows */
-    --neu-shadow-dark: rgba(0, 0, 0, 0.85);
-    --neu-shadow-light: rgba(255, 255, 255, 0.045);
-    --neu-shadow-light-strong: rgba(224, 135, 183, 0.25);
-    --neu-border: rgba(255, 255, 255, 0.07);
-    
-    --color-brand-50: 253 242 248;
-    --color-brand-100: 252 231 243;
-    --color-brand-200: 249 204 229;
-    --color-brand-300: 244 168 208;
-    --color-brand-400: 236 127 183;
-    --color-brand-500: 224 135 183; /* #E087B7 Helios Radiant Mauve */
-    --color-brand-600: 192 100 151; /* #C06497 Plum Rose */
-    --color-brand-700: 157 75 125;  /* #9D4B7D Deep Plum */
-    
-    --color-accent-400: 192 132 252; /* #C084FC Orchid Purple */
-    --color-accent-500: 168 85 247;  /* #A855F7 */
-
-    --color-emerald-400: 52 211 153; /* #34D399 Mint Green */
-    --color-emerald-500: 16 185 129;
-
-    --gradient-glow: linear-gradient(135deg, #E087B7, #A855F7, #EC4899);
-  }
-
-  /* Cyber Violet (Neumorphic) */
-  [data-theme="cyber-violet"] {
+  /* Default Theme: Cyber Violet (Neumorphic) */
+  :root, [data-theme="cyber-violet"] {
     color-scheme: dark;
     --bg-deep: #0e111a;
     --bg-base: #121622;
@@ -209,10 +176,6 @@
 
   body {
     background-color: var(--bg-deep);
-    background-image: 
-      radial-gradient(circle at 85% 12%, rgba(224, 135, 183, 0.08) 0%, transparent 40%),
-      radial-gradient(circle at 12% 88%, rgba(168, 85, 247, 0.06) 0%, transparent 45%);
-    background-attachment: fixed;
     color: #f1f5f9;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
@@ -354,86 +317,6 @@
     background-color: var(--bg-card);
     box-shadow: 3px 3px 7px var(--neu-shadow-dark), -2px -2px 5px var(--neu-shadow-light);
     border: 1px solid var(--neu-border);
-  }
-
-  /* =========================================================
-     HELIOS LUXE UI UTILITIES (Image Aesthetic Replicas)
-     ========================================================= */
-
-  /* Helios Outer Container / Card Frame */
-  .helios-shell {
-    background: #111018;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 2rem;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  }
-
-  /* Helios Dark Luxury Card */
-  .helios-card {
-    background: #171622;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 1.5rem;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .helios-card:hover {
-    border-color: rgba(224, 135, 183, 0.25);
-    transform: translateY(-1px);
-  }
-
-  /* Helios Pill Control */
-  .helios-pill {
-    background-color: #14131C;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 9999px;
-    color: #9CA3AF;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .helios-pill:hover {
-    color: #ffffff;
-    border-color: rgba(224, 135, 183, 0.35);
-    background-color: #1B1A26;
-  }
-
-  .helios-pill-active {
-    background: linear-gradient(135deg, rgba(224, 135, 183, 0.28), rgba(168, 85, 247, 0.16));
-    border: 1px solid rgba(224, 135, 183, 0.45);
-    color: #ffffff;
-    border-radius: 9999px;
-    box-shadow: 0 0 16px rgba(224, 135, 183, 0.22);
-  }
-
-  /* Radiant AI Feature Card */
-  .helios-ai-glow-card {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(180deg, #181723 0%, #1c1524 100%);
-    border: 1px solid rgba(224, 135, 183, 0.2);
-    border-radius: 1.5rem;
-  }
-
-  .helios-ai-beam {
-    position: absolute;
-    bottom: -24px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 82%;
-    height: 56px;
-    background: radial-gradient(ellipse at center, rgba(224, 135, 183, 0.65) 0%, rgba(168, 85, 247, 0.35) 45%, transparent 75%);
-    filter: blur(16px);
-    pointer-events: none;
-  }
-
-  .helios-btn-glow {
-    background: linear-gradient(135deg, rgba(224, 135, 183, 0.95), rgba(192, 100, 151, 0.9));
-    color: #ffffff;
-    border-radius: 9999px;
-    box-shadow: 0 0 24px rgba(224, 135, 183, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.4);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .helios-btn-glow:hover {
-    transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 0 35px rgba(224, 135, 183, 0.75);
   }
 
   .glow-border {
