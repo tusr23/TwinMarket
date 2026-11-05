@@ -73,7 +73,7 @@ export default function ProductManagement() {
         <div className="flex items-center gap-3">
           <NavLink
             to="/pricing-simulator"
-            className="px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-cyan-600 hover:bg-cyan-500 shadow-lg shadow-cyan-500/25 flex items-center gap-2 transition-all cursor-pointer"
+            className="neu-btn-primary px-4 py-2.5 rounded-xl text-xs font-bold text-white flex items-center gap-2 transition-all cursor-pointer"
           >
             <TrendingUp className="w-4 h-4" />
             Launch Pricing Simulator
@@ -119,7 +119,7 @@ export default function ProductManagement() {
           return (
             <div
               key={prod.id}
-              className="glass-card rounded-2xl p-6 border-slate-800 flex flex-col justify-between group hover:border-slate-700 transition-all"
+              className="neu-card neu-card-hover rounded-2xl p-6 flex flex-col justify-between group transition-all"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">

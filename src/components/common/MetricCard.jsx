@@ -42,14 +42,14 @@ export default function MetricCard({
         </div>
 
         {Icon && (
-          <div className={`p-2.5 rounded-xl border transition-colors ${accentStyles[accentColor] || accentStyles.brand}`}>
+          <div className={`p-2.5 rounded-xl neu-inset border transition-all ${accentStyles[accentColor] || accentStyles.brand}`}>
             <Icon className="w-5 h-5" />
           </div>
         )}
       </div>
 
       {change !== undefined && (
-        <div className="mt-4 pt-3 border-t border-slate-800/60 flex items-center justify-between text-xs">
+        <div className="mt-4 pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
           <div className="flex items-center gap-1.5 font-semibold">
             {isPositive === true && <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />}
             {isPositive === false && <TrendingDown className="w-3.5 h-3.5 text-rose-400" />}

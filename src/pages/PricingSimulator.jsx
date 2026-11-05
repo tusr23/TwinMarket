@@ -215,7 +215,7 @@ export default function PricingSimulator() {
           </div>
 
           {/* Unit Economics Snapshot */}
-          <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-2.5">
+          <div className="p-4 rounded-xl neu-inset space-y-2.5">
             <div className="flex justify-between text-xs">
               <span className="text-slate-400">Unit Contribution Margin:</span>
               <span className="font-semibold text-white">{formatCurrency(newPrice - newCost)}</span>
@@ -235,7 +235,7 @@ export default function PricingSimulator() {
           </div>
 
           {/* AI Verdict Box */}
-          <div className={`p-4 rounded-xl border ${
+          <div className={`p-4 rounded-xl border neu-card ${
             verdict.includes('Strongly') ? 'bg-emerald-950/30 border-emerald-500/40 text-emerald-300' :
             verdict.includes('Cautiously') ? 'bg-cyan-950/30 border-cyan-500/40 text-cyan-300' :
             'bg-rose-950/30 border-rose-500/40 text-rose-300'
@@ -251,7 +251,7 @@ export default function PricingSimulator() {
           <button
             onClick={handleApplyToLiveBusiness}
             disabled={isSimulatingCommit}
-            className="w-full py-3.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 via-brand-500 to-cyanAccent-400 hover:opacity-95 shadow-xl shadow-brand-500/25 active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-2"
+            className="neu-btn-primary w-full py-3.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 via-brand-500 to-cyanAccent-400 hover:opacity-95 shadow-xl active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-2"
           >
             <Play className={`w-4 h-4 fill-current ${isSimulatingCommit ? 'animate-spin' : ''}`} />
             {isSimulatingCommit ? 'COMMITTING TO MARKET ENGINE...' : 'RUN MARKET SIMULATION & APPLY'}

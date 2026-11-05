@@ -121,7 +121,7 @@ export default function MarketSimulator() {
             </span>
             <button
               onClick={clearMarketScenario}
-              className="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 cursor-pointer"
+              className="px-3 py-1.5 rounded-xl text-xs font-bold neu-btn text-slate-200 cursor-pointer"
             >
               Clear Live Shock
             </button>
@@ -141,8 +141,8 @@ export default function MarketSimulator() {
               onClick={() => setSelectedScenarioId(scenario.id)}
               className={`p-5 rounded-2xl border transition-all cursor-pointer relative overflow-hidden ${
                 isSelected
-                  ? 'bg-gradient-to-br from-brand-900/40 to-[#121B32] border-brand-500 shadow-xl shadow-brand-500/10'
-                  : 'glass-card hover:border-slate-700'
+                  ? 'neu-inset border-brand-500 shadow-xl'
+                  : 'neu-card neu-card-hover'
               }`}
             >
               {isLive && (
@@ -153,7 +153,7 @@ export default function MarketSimulator() {
               )}
 
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-800 text-slate-300">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded neu-pill text-slate-300">
                   {scenario.severity}
                 </span>
                 <span className="text-[10px] text-slate-400 flex items-center gap-1">
@@ -171,8 +171,8 @@ export default function MarketSimulator() {
       </div>
 
       {/* Selected Scenario Impact Analytics */}
-      <div className="glass-card rounded-2xl p-6 lg:p-8 space-y-6">
-        <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+      <div className="neu-card rounded-2xl p-6 lg:p-8 space-y-6">
+        <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-[var(--border-subtle)] gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <h3 className="text-xl font-extrabold text-white">{selectedScenario.title}</h3>
@@ -187,14 +187,14 @@ export default function MarketSimulator() {
             {isScenarioLive ? (
               <button
                 onClick={clearMarketScenario}
-                className="px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white transition-colors cursor-pointer"
+                className="px-5 py-2.5 rounded-xl text-xs font-bold neu-btn text-white transition-colors cursor-pointer"
               >
                 Restore Baseline Market
               </button>
             ) : (
               <button
                 onClick={() => applyMarketScenario(selectedScenario.id)}
-                className="px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white shadow-lg shadow-rose-500/25 transition-all cursor-pointer flex items-center gap-2"
+                className="neu-btn-primary px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white shadow-lg transition-all cursor-pointer flex items-center gap-2"
               >
                 <Flame className="w-4 h-4" />
                 Activate Scenario On Live Business
@@ -205,7 +205,7 @@ export default function MarketSimulator() {
 
         {/* 6 Key Impact Delta Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div className="p-4 rounded-xl neu-inset">
             <span className="text-[10px] font-bold uppercase text-slate-400 block">Monthly Revenue</span>
             <span className="text-lg font-bold text-white mt-1 block">{formatCurrency(simFin.totalRevenue)}</span>
             <span className={`text-xs font-semibold ${simFin.totalRevenue >= baselineFin.totalRevenue ? 'text-emerald-400' : 'text-rose-400'}`}>
@@ -214,7 +214,7 @@ export default function MarketSimulator() {
             </span>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div className="p-4 rounded-xl neu-inset">
             <span className="text-[10px] font-bold uppercase text-slate-400 block">Net Profit</span>
             <span className={`text-lg font-bold mt-1 block ${simFin.netProfit >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
               {formatCurrency(simFin.netProfit)}
@@ -225,7 +225,7 @@ export default function MarketSimulator() {
             </span>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div className="p-4 rounded-xl neu-inset">
             <span className="text-[10px] font-bold uppercase text-slate-400 block">Customer Demand</span>
             <span className="text-lg font-bold text-cyanAccent-400 mt-1 block">{simDemand} units</span>
             <span className={`text-xs font-semibold ${simDemand >= baselineDemand ? 'text-emerald-400' : 'text-rose-400'}`}>
@@ -233,7 +233,7 @@ export default function MarketSimulator() {
             </span>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div className="p-4 rounded-xl neu-inset">
             <span className="text-[10px] font-bold uppercase text-slate-400 block">Market Share</span>
             <span className="text-lg font-bold text-white mt-1 block">{simShare}%</span>
             <span className={`text-xs font-semibold ${simShare >= baselineShare ? 'text-emerald-400' : 'text-rose-400'}`}>
@@ -241,13 +241,13 @@ export default function MarketSimulator() {
             </span>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div className="p-4 rounded-xl neu-inset">
             <span className="text-[10px] font-bold uppercase text-slate-400 block">Stock Buffer</span>
             <span className="text-lg font-bold text-white mt-1 block">{simulatedOutcome.inventory.totalStockUnits}</span>
             <span className="text-xs text-slate-400">Inventory Units</span>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div className="p-4 rounded-xl neu-inset">
             <span className="text-[10px] font-bold uppercase text-slate-400 block">Health Score</span>
             <span className={`text-lg font-bold mt-1 block ${simHealth >= 70 ? 'text-emerald-400' : 'text-amber-400'}`}>
               {simHealth}/100

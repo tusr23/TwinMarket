@@ -56,7 +56,7 @@ export default function RiskAnalysis() {
           </p>
         </div>
 
-        <div className="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-center gap-4">
+        <div className="p-4 rounded-2xl neu-inset flex items-center gap-4">
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-400 block">Composite Risk Index</span>
             <span className="text-2xl font-extrabold text-white">{risksObj.compositeRiskScore}/100</span>

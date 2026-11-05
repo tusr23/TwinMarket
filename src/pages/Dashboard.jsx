@@ -65,7 +65,7 @@ export default function Dashboard() {
   return (
     <div className="space-y-8 animate-fade-in pb-12">
       {/* Top Banner / Hero */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-900/40 via-slate-900 to-[#0F1523] border border-slate-800/80 p-6 lg:p-8">
+      <div className="relative overflow-hidden rounded-3xl neu-card p-6 lg:p-8 border border-[var(--neu-border)]">
         <div className="absolute right-0 top-0 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
@@ -84,14 +84,14 @@ export default function Dashboard() {
           <div className="flex flex-wrap items-center gap-3">
             <NavLink
               to="/pricing-simulator"
-              className="px-4 py-2.5 rounded-xl font-semibold text-xs text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 flex items-center gap-2 transition-all cursor-pointer shadow-lg"
+              className="px-4 py-2.5 rounded-xl font-semibold text-xs text-white neu-btn flex items-center gap-2 transition-all cursor-pointer"
             >
               <TrendingUp className="w-4 h-4 text-cyanAccent-400" />
               Simulate Price
             </NavLink>
             <NavLink
               to="/advisor"
-              className="px-4 py-2.5 rounded-xl font-semibold text-xs text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-500/30 flex items-center gap-2 transition-all cursor-pointer"
+              className="px-4 py-2.5 rounded-xl font-semibold text-xs text-white neu-btn-primary flex items-center gap-2 transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-white" />
               AI Advisor Chat
@@ -208,7 +208,7 @@ export default function Dashboard() {
             {advisorInsights.slice(0, 3).map((insight) => (
               <div
                 key={insight.id}
-                className="p-4 rounded-xl bg-slate-900/90 border border-slate-800/80 flex flex-col justify-between"
+                className="p-4 rounded-xl neu-inset flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">

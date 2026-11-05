@@ -118,8 +118,8 @@ export default function Settings() {
                 }}
                 className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between group ${
                   isSelected
-                    ? 'bg-[var(--bg-card)] border-brand-500 shadow-xl shadow-brand-500/15 ring-1 ring-brand-500'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700 hover:bg-slate-900/90'
+                    ? 'neu-inset border-brand-500 shadow-lg'
+                    : 'neu-card neu-card-hover'
                 }`}
               >
                 <div>
@@ -190,8 +190,8 @@ export default function Settings() {
                 onClick={() => setCurrency(curr.id)}
                 className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
                   isSelected
-                    ? 'bg-brand-900/40 border-brand-500 shadow-lg shadow-brand-500/10'
-                    : 'bg-slate-900/60 border-slate-800 hover:border-slate-700'
+                    ? 'neu-inset border-brand-500 shadow-inner'
+                    : 'neu-btn'
                 }`}
               >
                 <span className="text-xs font-bold text-white block">{curr.label}</span>
@@ -214,7 +214,7 @@ export default function Settings() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Export JSON */}
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between">
+          <div className="p-4 rounded-xl neu-inset flex flex-col justify-between">
             <div>
               <h4 className="text-xs font-bold text-white mb-1">Export Full Snapshot</h4>
               <p className="text-xs text-slate-400 leading-relaxed">
@@ -223,14 +223,14 @@ export default function Settings() {
             </div>
             <button
               onClick={handleExportData}
-              className="mt-4 py-2.5 px-4 rounded-xl text-xs font-semibold bg-brand-600 hover:bg-brand-500 text-white flex items-center justify-center gap-2 cursor-pointer transition-colors"
+              className="neu-btn-primary mt-4 py-2.5 px-4 rounded-xl text-xs font-semibold text-white flex items-center justify-center gap-2 cursor-pointer transition-all"
             >
               <Download className="w-4 h-4" /> Export Backup JSON
             </button>
           </div>
 
           {/* Import JSON */}
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between">
+          <div className="p-4 rounded-xl neu-inset flex flex-col justify-between">
             <div>
               <h4 className="text-xs font-bold text-white mb-1">Restore from Snapshot</h4>
               <p className="text-xs text-slate-400 leading-relaxed">
@@ -238,7 +238,7 @@ export default function Settings() {
               </p>
             </div>
             <div className="mt-4">
-              <label className="py-2.5 px-4 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center justify-center gap-2 cursor-pointer transition-colors">
+              <label className="neu-btn py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-200 flex items-center justify-center gap-2 cursor-pointer transition-all">
                 <Upload className="w-4 h-4" /> Select Backup File
                 <input
                   type="file"
@@ -257,7 +257,7 @@ export default function Settings() {
         </div>
 
         {/* Danger Zone: Reset */}
-        <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="pt-4 border-t border-[var(--border-subtle)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h4 className="text-xs font-bold text-rose-400">Danger Zone</h4>
             <p className="text-xs text-slate-400 mt-0.5">
@@ -266,7 +266,7 @@ export default function Settings() {
           </div>
           <button
             onClick={handleClearCache}
-            className="px-4 py-2 rounded-xl text-xs font-bold bg-rose-600/20 hover:bg-rose-600/30 text-rose-300 border border-rose-500/40 flex items-center gap-2 transition-colors cursor-pointer"
+            className="neu-btn px-4 py-2 rounded-xl text-xs font-bold text-rose-300 border-rose-500/40 flex items-center gap-2 transition-all cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             Reset to Demo Data

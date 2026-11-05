@@ -140,7 +140,7 @@ export default function CustomerDemand() {
 
           <button
             onClick={handleApplyMarketing}
-            className="px-5 py-3 rounded-xl text-xs font-bold text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-500/25 transition-all cursor-pointer shrink-0"
+            className="neu-btn-primary px-5 py-3 rounded-xl text-xs font-bold text-white shadow-lg transition-all cursor-pointer shrink-0"
           >
             Apply Marketing Budget
           </button>

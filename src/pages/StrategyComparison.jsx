@@ -149,7 +149,7 @@ export default function StrategyComparison() {
           </p>
         </div>
 
-        <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 flex items-center gap-3">
+        <div className="p-3.5 rounded-2xl neu-inset flex items-center gap-3">
           <span className="text-xs text-slate-400 font-medium">Currently Active:</span>
           <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 uppercase tracking-wider">
             {currentStrategyId} Strategy
@@ -186,7 +186,7 @@ export default function StrategyComparison() {
                 </p>
 
                 {/* Metrics Breakdown */}
-                <div className="space-y-3 text-xs mb-6 p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
+                <div className="space-y-3 text-xs mb-6 p-4 rounded-2xl neu-inset">
                   <div className="flex justify-between">
                     <span className="text-slate-400">Target Market Share:</span>
                     <span className="font-bold text-white">{strat.expectedShare}</span>
@@ -223,8 +223,8 @@ export default function StrategyComparison() {
                   disabled={isActive}
                   className={`w-full py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-slate-800 text-slate-400 cursor-default'
-                      : 'bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/20 active:scale-98'
+                      ? 'neu-inset text-slate-400 cursor-default font-medium'
+                      : 'neu-btn-primary text-white active:scale-98'
                   }`}
                 >
                   {isActive ? 'Strategy Currently Active' : `Activate ${strat.title}`}

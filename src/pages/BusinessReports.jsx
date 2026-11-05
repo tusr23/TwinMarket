@@ -69,14 +69,14 @@ export default function BusinessReports() {
         <div className="flex items-center gap-3">
           <button
             onClick={handleExportJSON}
-            className="px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-2 cursor-pointer transition-colors"
+            className="neu-btn px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 flex items-center gap-2 cursor-pointer transition-all"
           >
             <Download className="w-4 h-4" />
             Export Data JSON
           </button>
           <button
             onClick={handlePrint}
-            className="px-5 py-2.5 rounded-xl text-xs font-bold bg-brand-600 hover:bg-brand-500 text-white shadow-lg shadow-brand-500/25 flex items-center gap-2 cursor-pointer transition-all"
+            className="neu-btn-primary px-5 py-2.5 rounded-xl text-xs font-bold text-white shadow-lg flex items-center gap-2 cursor-pointer transition-all"
           >
             <Printer className="w-4 h-4" />
             Print Full Report

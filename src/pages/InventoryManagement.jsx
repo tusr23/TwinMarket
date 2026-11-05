@@ -109,14 +109,14 @@ export default function InventoryManagement() {
         <div className="flex flex-wrap items-center gap-3">
           <button
             onClick={restockLowStockProducts}
-            className="px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-lg shadow-emerald-500/25 flex items-center gap-2 transition-all cursor-pointer"
+            className="neu-btn px-4 py-2.5 rounded-xl text-xs font-bold text-emerald-400 flex items-center gap-2 transition-all cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
             Batch Restock Low Stock
           </button>
           <button
             onClick={() => setIsAddModalOpen(true)}
-            className="px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-all cursor-pointer"
+            className="neu-btn-primary px-4 py-2.5 rounded-xl text-xs font-bold text-white flex items-center gap-2 transition-all cursor-pointer"
           >
             <PlusCircle className="w-4 h-4" />
             Add New Product
@@ -393,17 +393,17 @@ export default function InventoryManagement() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex justify-end gap-3">
+              <div className="pt-4 border-t border-[var(--border-subtle)] flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white bg-slate-800"
+                  className="neu-btn px-4 py-2 rounded-xl text-xs font-semibold text-slate-400 hover:text-white"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl text-xs font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-500/25 cursor-pointer"
+                  className="neu-btn-primary px-5 py-2 rounded-xl text-xs font-semibold text-white shadow-lg cursor-pointer"
                 >
                   Confirm & List SKU
                 </button>

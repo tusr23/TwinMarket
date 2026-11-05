@@ -36,6 +36,15 @@ export default {
           500: 'rgb(var(--color-emerald-500) / <alpha-value>)',
         }
       },
+      boxShadow: {
+        'neu-raised': '7px 7px 16px var(--neu-shadow-dark), -5px -5px 14px var(--neu-shadow-light)',
+        'neu-raised-sm': '4px 4px 10px var(--neu-shadow-dark), -3px -3px 8px var(--neu-shadow-light)',
+        'neu-raised-lg': '12px 12px 28px var(--neu-shadow-dark), -8px -8px 22px var(--neu-shadow-light)',
+        'neu-inset': 'inset 4px 4px 9px var(--neu-shadow-dark), inset -3px -3px 7px var(--neu-shadow-light)',
+        'neu-inset-sm': 'inset 2px 2px 6px var(--neu-shadow-dark), inset -2px -2px 5px var(--neu-shadow-light)',
+        'neu-button': '5px 5px 12px var(--neu-shadow-dark), -4px -4px 10px var(--neu-shadow-light)',
+        'neu-button-pressed': 'inset 3px 3px 6px var(--neu-shadow-dark), inset -3px -3px 6px var(--neu-shadow-light)',
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace']

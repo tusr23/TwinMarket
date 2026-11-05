@@ -79,7 +79,7 @@ export default function Sidebar({ isOpen, onClose }) {
         </div>
 
         {/* Active Business Quick Widget */}
-        <div className="px-4 py-3 mx-3 my-3 rounded-xl bg-[var(--bg-card)] border border-[var(--border-card)] flex items-center justify-between">
+        <div className="px-4 py-3 mx-3 my-3 rounded-xl neu-inset border border-[var(--border-subtle)] flex items-center justify-between">
           <div className="overflow-hidden pr-2">
             <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Active Venture</p>
             <p className="text-sm font-semibold text-white truncate">{business.name}</p>
@@ -87,7 +87,7 @@ export default function Sidebar({ isOpen, onClose }) {
           </div>
           <div className="text-right">
             <span className="text-[10px] text-slate-400 block">Health</span>
-            <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
+            <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
               healthScore >= 75 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
               healthScore >= 50 ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' :
               'bg-rose-500/20 text-rose-400 border border-rose-500/30'
@@ -111,10 +111,10 @@ export default function Sidebar({ isOpen, onClose }) {
                     to={item.to}
                     onClick={onClose}
                     className={({ isActive }) =>
-                      `flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all group ${
+                      `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                         isActive
-                          ? 'bg-gradient-to-r from-brand-600/30 to-indigo-600/10 text-white border-l-4 border-brand-500 font-semibold'
-                          : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                          ? 'neu-inset text-white border-l-4 border-brand-500 font-semibold'
+                          : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
                       }`
                     }
                   >
@@ -145,10 +145,10 @@ export default function Sidebar({ isOpen, onClose }) {
                     to={item.to}
                     onClick={onClose}
                     className={({ isActive }) =>
-                      `flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all group ${
+                      `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                         isActive
-                          ? 'bg-gradient-to-r from-cyan-600/30 to-cyan-600/10 text-white border-l-4 border-cyan-400 font-semibold'
-                          : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                          ? 'neu-inset text-white border-l-4 border-cyan-400 font-semibold'
+                          : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
                       }`
                     }
                   >
@@ -171,10 +171,10 @@ export default function Sidebar({ isOpen, onClose }) {
                 to="/guide"
                 onClick={onClose}
                 className={({ isActive }) =>
-                  `flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all group ${
+                  `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                     isActive
-                      ? 'bg-gradient-to-r from-emerald-600/30 to-teal-600/10 text-white border-l-4 border-emerald-400 font-semibold'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                      ? 'neu-inset text-white border-l-4 border-emerald-400 font-semibold'
+                      : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
                   }`
                 }
               >

@@ -3,15 +3,26 @@
 @tailwind utilities;
 
 @layer base {
-  /* Default: Cyber Violet (Linear & Raycast AI style) */
+  /* =========================================================
+     DARK NEUMORPHISM (Soft UI) THEME SYSTEM
+     ========================================================= */
+
+  /* Default Theme: Cyber Violet (Neumorphic) */
   :root, [data-theme="cyber-violet"] {
     color-scheme: dark;
-    --bg-deep: #06070B;
-    --bg-base: #0B0E17;
-    --bg-card: rgba(16, 21, 37, 0.82);
-    --border-subtle: #1C2338;
-    --border-card: rgba(139, 92, 246, 0.22);
+    --bg-deep: #0e111a;
+    --bg-base: #121622;
+    --bg-card: #171b2a;
+    --bg-surface-light: #1b2031;
+    --border-subtle: #20263b;
+    --border-card: rgba(139, 92, 246, 0.16);
     --border-hover: rgba(139, 92, 246, 0.45);
+
+    /* Neumorphic Dual Shadows */
+    --neu-shadow-dark: rgba(0, 0, 0, 0.72);
+    --neu-shadow-light: rgba(255, 255, 255, 0.055);
+    --neu-shadow-light-strong: rgba(139, 92, 246, 0.18);
+    --neu-border: rgba(139, 92, 246, 0.14);
     
     --color-brand-50: 245 243 255;
     --color-brand-100: 237 233 254;
@@ -28,17 +39,23 @@
     --color-emerald-400: 52 211 153;
     --color-emerald-500: 16 185 129;
 
-    --gradient-glow: linear-gradient(90deg, #8B5CF6, #06B6D4, #10B981);
+    --gradient-glow: linear-gradient(135deg, #8B5CF6, #06B6D4, #10B981);
   }
 
-  /* Emerald Matrix (Supabase / Bloomberg ESG) */
+  /* Emerald Matrix (Neumorphic) */
   [data-theme="emerald-matrix"] {
-    --bg-deep: #030705;
-    --bg-base: #07120C;
-    --bg-card: rgba(11, 26, 18, 0.85);
-    --border-subtle: #143022;
-    --border-card: rgba(16, 185, 129, 0.22);
+    --bg-deep: #0a120e;
+    --bg-base: #0f1813;
+    --bg-card: #13201a;
+    --bg-surface-light: #182820;
+    --border-subtle: #1c3227;
+    --border-card: rgba(16, 185, 129, 0.16);
     --border-hover: rgba(16, 185, 129, 0.45);
+
+    --neu-shadow-dark: rgba(0, 0, 0, 0.72);
+    --neu-shadow-light: rgba(255, 255, 255, 0.055);
+    --neu-shadow-light-strong: rgba(16, 185, 129, 0.18);
+    --neu-border: rgba(16, 185, 129, 0.14);
 
     --color-brand-50: 236 253 245;
     --color-brand-100: 209 250 229;
@@ -55,17 +72,23 @@
     --color-emerald-400: 52 211 153;
     --color-emerald-500: 16 185 129;
 
-    --gradient-glow: linear-gradient(90deg, #10B981, #38BDF8, #34D399);
+    --gradient-glow: linear-gradient(135deg, #10B981, #38BDF8, #34D399);
   }
 
-  /* Electric Azure (Stripe / Ramp Fintech) */
+  /* Electric Azure (Neumorphic) */
   [data-theme="electric-azure"] {
-    --bg-deep: #030712;
-    --bg-base: #070E22;
-    --bg-card: rgba(12, 22, 46, 0.85);
-    --border-subtle: #16264C;
-    --border-card: rgba(59, 130, 246, 0.22);
+    --bg-deep: #0b111e;
+    --bg-base: #0f1728;
+    --bg-card: #141f35;
+    --bg-surface-light: #182641;
+    --border-subtle: #1d2d4d;
+    --border-card: rgba(59, 130, 246, 0.16);
     --border-hover: rgba(59, 130, 246, 0.45);
+
+    --neu-shadow-dark: rgba(0, 0, 0, 0.72);
+    --neu-shadow-light: rgba(255, 255, 255, 0.055);
+    --neu-shadow-light-strong: rgba(59, 130, 246, 0.18);
+    --neu-border: rgba(59, 130, 246, 0.14);
 
     --color-brand-50: 239 246 255;
     --color-brand-100: 219 234 254;
@@ -82,17 +105,23 @@
     --color-emerald-400: 45 212 191;
     --color-emerald-500: 20 184 166;
 
-    --gradient-glow: linear-gradient(90deg, #3B82F6, #2DD4BF, #60A5FA);
+    --gradient-glow: linear-gradient(135deg, #3B82F6, #2DD4BF, #60A5FA);
   }
 
-  /* Bloomberg Gold (High-Finance Terminal) */
+  /* Bloomberg Gold (Neumorphic) */
   [data-theme="amber-gold"] {
-    --bg-deep: #070604;
-    --bg-base: #110E09;
-    --bg-card: rgba(26, 21, 14, 0.85);
-    --border-subtle: #362916;
-    --border-card: rgba(245, 158, 11, 0.22);
+    --bg-deep: #13100a;
+    --bg-base: #18150d;
+    --bg-card: #201b11;
+    --bg-surface-light: #282115;
+    --border-subtle: #3a2e19;
+    --border-card: rgba(245, 158, 11, 0.16);
     --border-hover: rgba(245, 158, 11, 0.45);
+
+    --neu-shadow-dark: rgba(0, 0, 0, 0.72);
+    --neu-shadow-light: rgba(255, 255, 255, 0.055);
+    --neu-shadow-light-strong: rgba(245, 158, 11, 0.18);
+    --neu-border: rgba(245, 158, 11, 0.14);
 
     --color-brand-50: 255 251 235;
     --color-brand-100: 254 243 199;
@@ -109,17 +138,23 @@
     --color-emerald-400: 52 211 153;
     --color-emerald-500: 16 185 129;
 
-    --gradient-glow: linear-gradient(90deg, #F59E0B, #06B6D4, #FBBF24);
+    --gradient-glow: linear-gradient(135deg, #F59E0B, #06B6D4, #FBBF24);
   }
 
-  /* Sunset Rose (Cyberpunk Luxury & Crimson) */
+  /* Sunset Rose (Neumorphic) */
   [data-theme="sunset-rose"] {
-    --bg-deep: #080406;
-    --bg-base: #130810;
-    --bg-card: rgba(28, 13, 23, 0.85);
-    --border-subtle: #3D1729;
-    --border-card: rgba(244, 63, 94, 0.22);
+    --bg-deep: #140b11;
+    --bg-base: #191016;
+    --bg-card: #21151e;
+    --bg-surface-light: #2a1b26;
+    --border-subtle: #3d1c31;
+    --border-card: rgba(244, 63, 94, 0.16);
     --border-hover: rgba(244, 63, 94, 0.45);
+
+    --neu-shadow-dark: rgba(0, 0, 0, 0.72);
+    --neu-shadow-light: rgba(255, 255, 255, 0.055);
+    --neu-shadow-light-strong: rgba(244, 63, 94, 0.18);
+    --neu-border: rgba(244, 63, 94, 0.14);
 
     --color-brand-50: 255 241 242;
     --color-brand-100: 255 228 230;
@@ -136,7 +171,7 @@
     --color-emerald-400: 52 211 153;
     --color-emerald-500: 16 185 129;
 
-    --gradient-glow: linear-gradient(90deg, #F43F5E, #C084FC, #FB7185);
+    --gradient-glow: linear-gradient(135deg, #F43F5E, #C084FC, #FB7185);
   }
 
   body {
@@ -147,16 +182,57 @@
     overflow-x: hidden;
   }
 
+  /* Form Elements Neumorphic Style */
+  input[type="text"],
+  input[type="number"],
+  input[type="search"],
+  select {
+    background-color: var(--bg-deep) !important;
+    box-shadow: inset 3px 3px 7px var(--neu-shadow-dark), inset -2px -2px 6px var(--neu-shadow-light);
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 0.75rem;
+    transition: all 0.25s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  input[type="search"]:focus,
+  select:focus {
+    border-color: rgb(var(--color-brand-500) / 0.5) !important;
+    box-shadow: inset 3px 3px 7px var(--neu-shadow-dark), inset -2px -2px 6px var(--neu-shadow-light), 0 0 10px rgb(var(--color-brand-500) / 0.25);
+    outline: none !important;
+  }
+
+  /* Range Sliders Neumorphic Recessed Groove */
+  input[type="range"] {
+    background: var(--bg-deep);
+    box-shadow: inset 2px 2px 6px var(--neu-shadow-dark), inset -2px -2px 5px var(--neu-shadow-light);
+    height: 8px;
+    border-radius: 9999px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    box-shadow: 3px 3px 7px var(--neu-shadow-dark), -2px -2px 5px var(--neu-shadow-light);
+    border: 2px solid rgb(var(--color-brand-500));
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 7px;
+    height: 7px;
   }
   ::-webkit-scrollbar-track {
     background: var(--bg-base);
+    box-shadow: inset 2px 2px 4px var(--neu-shadow-dark);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--border-subtle);
+    background: linear-gradient(145deg, var(--bg-card), var(--border-subtle));
+    box-shadow: 2px 2px 4px var(--neu-shadow-dark), -1px -1px 3px var(--neu-shadow-light);
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
@@ -165,29 +241,82 @@
 }
 
 @layer utilities {
-  .glass-card {
-    background-color: var(--bg-card);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--border-card);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
-  }
-  
-  .glass-card-hover {
+  /* =========================================================
+     NEUMORPHIC UTILITIES (Extruded & Debossed Soft UI)
+     ========================================================= */
+
+  /* Raised / Extruded Soft Card */
+  .glass-card, .neu-card {
+    background: linear-gradient(145deg, var(--bg-card), var(--bg-base));
+    border-radius: 1.25rem;
+    box-shadow: 7px 7px 16px var(--neu-shadow-dark), -5px -5px 14px var(--neu-shadow-light);
+    border: 1px solid var(--neu-border);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-
-  .glass-card-hover:hover {
-    border-color: var(--border-hover);
-    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.6);
+  
+  .glass-card-hover:hover, .neu-card-hover:hover {
+    box-shadow: 11px 11px 24px var(--neu-shadow-dark), -7px -7px 18px var(--neu-shadow-light-strong);
     transform: translateY(-2px);
+    border-color: var(--border-hover);
   }
 
-  .glass-panel {
+  /* Flat / Recessed Panel */
+  .glass-panel, .neu-panel {
     background-color: var(--bg-base);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 6px 6px 14px var(--neu-shadow-dark), -4px -4px 10px var(--neu-shadow-light);
     border: 1px solid var(--border-subtle);
+  }
+
+  /* Sunken / Inset Debossed Well */
+  .neu-inset {
+    background-color: var(--bg-deep);
+    box-shadow: inset 4px 4px 9px var(--neu-shadow-dark), inset -3px -3px 7px var(--neu-shadow-light);
+    border: 1px solid var(--border-subtle);
+  }
+
+  /* Tactile Neumorphic Buttons */
+  .neu-btn {
+    background: linear-gradient(145deg, var(--bg-card), var(--bg-base));
+    box-shadow: 4px 4px 10px var(--neu-shadow-dark), -3px -3px 8px var(--neu-shadow-light);
+    border: 1px solid var(--neu-border);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .neu-btn:hover {
+    box-shadow: 6px 6px 14px var(--neu-shadow-dark), -4px -4px 10px var(--neu-shadow-light-strong);
+    transform: translateY(-1px);
+  }
+
+  .neu-btn:active {
+    box-shadow: inset 3px 3px 6px var(--neu-shadow-dark), inset -2px -2px 5px var(--neu-shadow-light);
+    transform: translateY(1px) scale(0.98);
+  }
+
+  /* Primary Action Neumorphic Button */
+  .neu-btn-primary {
+    background: linear-gradient(145deg, rgb(var(--color-brand-600)), rgb(var(--color-brand-700)));
+    box-shadow: 5px 5px 14px var(--neu-shadow-dark), -3px -3px 9px var(--neu-shadow-light-strong);
+    border: 1px solid rgb(var(--color-brand-500) / 0.4);
+    color: #ffffff;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .neu-btn-primary:hover {
+    box-shadow: 7px 7px 18px var(--neu-shadow-dark), -4px -4px 12px var(--neu-shadow-light-strong);
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+
+  .neu-btn-primary:active {
+    box-shadow: inset 3px 3px 7px rgba(0, 0, 0, 0.6), inset -2px -2px 5px rgba(255, 255, 255, 0.2);
+    transform: translateY(1px) scale(0.98);
+  }
+
+  /* Soft Neumorphic Pill */
+  .neu-pill {
+    background-color: var(--bg-card);
+    box-shadow: 3px 3px 7px var(--neu-shadow-dark), -2px -2px 5px var(--neu-shadow-light);
+    border: 1px solid var(--neu-border);
   }
 
   .glow-border {
@@ -221,7 +350,7 @@
   .print-only {
     display: block !important;
   }
-  .glass-card, .glass-panel {
+  .glass-card, .glass-panel, .neu-card, .neu-panel {
     background: #ffffff !important;
     border: 1px solid #e2e8f0 !important;
     box-shadow: none !important;

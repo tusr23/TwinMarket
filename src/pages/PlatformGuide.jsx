@@ -308,7 +308,7 @@ export default function PlatformGuide() {
   return (
     <div className="space-y-8 animate-fade-in pb-12">
       {/* Hero Header Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-brand-900/40 via-dark-900 to-dark-850 border border-[var(--border-subtle)] p-6 lg:p-10">
+      <div className="relative overflow-hidden rounded-3xl neu-card border border-[var(--neu-border)] p-6 lg:p-10">
         <div className="absolute right-0 top-0 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
@@ -327,14 +327,14 @@ export default function PlatformGuide() {
           <div className="flex flex-wrap items-center gap-3">
             <NavLink
               to="/pricing-simulator"
-              className="px-4 py-2.5 rounded-xl font-bold text-xs text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-500/25 flex items-center gap-2 transition-all cursor-pointer"
+              className="neu-btn-primary px-4 py-2.5 rounded-xl font-bold text-xs text-white shadow-lg flex items-center gap-2 transition-all cursor-pointer"
             >
               <TrendingUp className="w-4 h-4" />
               Launch Pricing Lab
             </NavLink>
             <NavLink
               to="/advisor"
-              className="px-4 py-2.5 rounded-xl font-bold text-xs text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-700 flex items-center gap-2 transition-all cursor-pointer"
+              className="neu-btn px-4 py-2.5 rounded-xl font-bold text-xs text-slate-200 flex items-center gap-2 transition-all cursor-pointer"
             >
               <Bot className="w-4 h-4 text-cyanAccent-400" />
               Ask AI Advisor
@@ -358,8 +358,8 @@ export default function PlatformGuide() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`px-4 py-2.5 rounded-xl text-xs font-bold flex items-center gap-2.5 transition-all cursor-pointer ${
                   isActive
-                    ? 'bg-brand-600 text-white shadow-lg shadow-brand-500/20'
-                    : 'bg-[var(--bg-card)] hover:bg-slate-800 text-slate-300 hover:text-white border border-[var(--border-card)]'
+                    ? 'neu-btn-primary text-white shadow-lg'
+                    : 'neu-btn text-slate-300 hover:text-white'
                 }`}
               >
                 <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-brand-400'}`} />

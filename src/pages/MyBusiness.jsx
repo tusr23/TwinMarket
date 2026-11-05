@@ -107,14 +107,14 @@ export default function MyBusiness() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setIsCreatingNew(true)}
-            className="px-4 py-2.5 rounded-xl text-xs font-semibold bg-brand-600 hover:bg-brand-500 text-white flex items-center gap-2 shadow-lg shadow-brand-500/25 transition-all cursor-pointer"
+            className="neu-btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold text-white flex items-center gap-2 shadow-lg transition-all cursor-pointer"
           >
             <PlusCircle className="w-4 h-4" />
             Create New Business
           </button>
           <button
             onClick={resetToDemo}
-            className="px-3.5 py-2.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 flex items-center gap-2 transition-all cursor-pointer"
+            className="neu-btn px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 transition-all cursor-pointer"
             title="Reset to default demo shop"
           >
             <RotateCcw className="w-4 h-4" />
@@ -277,8 +277,8 @@ export default function MyBusiness() {
       {/* Creation Modal */}
       {isCreatingNew && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
-          <div className="bg-[#0F1523] border border-slate-800 rounded-3xl max-w-2xl w-full p-6 lg:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
+          <div className="neu-card rounded-3xl max-w-2xl w-full p-6 lg:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto border border-[var(--neu-border)]">
+            <div className="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)] mb-6">
               <div>
                 <h3 className="text-xl font-extrabold text-white">Create Virtual Business Entity</h3>
                 <p className="text-xs text-slate-400 mt-1">
@@ -287,7 +287,7 @@ export default function MyBusiness() {
               </div>
               <button
                 onClick={() => setIsCreatingNew(false)}
-                className="text-slate-400 hover:text-white text-lg font-bold p-2"
+                className="text-slate-400 hover:text-white text-lg font-bold p-2 neu-btn rounded-xl"
               >
                 ✕
               </button>
@@ -378,17 +378,17 @@ export default function MyBusiness() {
                 </select>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 flex justify-end gap-3">
+              <div className="pt-4 border-t border-[var(--border-subtle)] flex justify-end gap-3">
                 <button
                   type="button"
                   onClick={() => setIsCreatingNew(false)}
-                  className="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white bg-slate-800"
+                  className="neu-btn px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-400 hover:text-white"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 py-2.5 rounded-xl text-xs font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-500/25 flex items-center gap-2 cursor-pointer"
+                  className="neu-btn-primary px-6 py-2.5 rounded-xl text-xs font-semibold text-white shadow-lg flex items-center gap-2 cursor-pointer"
                 >
                   <Sparkles className="w-4 h-4" />
                   Launch Virtual Venture
