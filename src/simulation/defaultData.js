@@ -300,9 +300,20 @@ export const DEMO_BUSINESS = {
 
 export const UI_THEMES = [
   {
+    id: 'helios-mauve',
+    name: 'Helios Luxe Plum',
+    tag: 'Helios Default',
+    style: 'Helios Investments Dark Luxe',
+    primaryColor: '#E087B7',
+    secondaryColor: '#A855F7',
+    previewGradient: 'from-[#E087B7] via-[#C06497] to-[#7E22CE]',
+    dotBg: 'bg-[#E087B7]',
+    description: 'Ultra-sleek dark velvet charcoal paired with radiant mauve, plum glow, and pill navigation.'
+  },
+  {
     id: 'cyber-violet',
     name: 'Cyber Violet',
-    tag: 'Trending Default',
+    tag: 'Raycast AI',
     style: 'Linear & Raycast AI',
     primaryColor: '#8B5CF6',
     secondaryColor: '#22D3EE',
