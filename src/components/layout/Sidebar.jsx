@@ -63,15 +63,13 @@ export default function Sidebar({ isOpen, onClose }) {
         {/* Logo and Brand Header */}
         <div className="p-5 border-b border-[var(--border-subtle)] flex items-center justify-between">
           <NavLink to="/" className="flex items-center gap-3 group" onClick={onClose}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-brand-500 to-cyanAccent-400 p-0.5 shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-shadow">
-              <div className="w-full h-full bg-[var(--bg-base)] rounded-[10px] flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-cyanAccent-400" />
-              </div>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8F9DCC] to-[#4D5A8F] p-0.5 shadow-md shadow-[#4D5A8F]/30 group-hover:shadow-[#8F9DCC]/40 transition-all flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-[#F5F8FF]" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-lg text-white tracking-tight">TwinMarket</span>
-                <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-400 border border-brand-500/30">AI</span>
+                <span className="font-extrabold text-lg tracking-tight">TwinMarket</span>
+                <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-[#E3EAFA] text-[#4D5A8F] border border-[#B3C0E6]">AI</span>
               </div>
               <p className="text-[11px] text-slate-400 font-medium">Virtual Market Intelligence</p>
             </div>
@@ -82,16 +80,12 @@ export default function Sidebar({ isOpen, onClose }) {
         <div className="px-4 py-3 mx-3 my-3 rounded-xl neu-inset border border-[var(--border-subtle)] flex items-center justify-between">
           <div className="overflow-hidden pr-2">
             <p className="text-[10px] uppercase font-bold tracking-wider text-slate-400">Active Venture</p>
-            <p className="text-sm font-semibold text-white truncate">{business.name}</p>
-            <span className="text-[10px] text-cyanAccent-400 font-medium">{business.categoryName}</span>
+            <p className="text-sm font-semibold truncate">{business.name}</p>
+            <span className="text-[10px] text-slate-400 font-medium">{business.categoryName}</span>
           </div>
           <div className="text-right">
             <span className="text-[10px] text-slate-400 block">Health</span>
-            <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full ${
-              healthScore >= 75 ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' :
-              healthScore >= 50 ? 'bg-amber-500/20 text-amber-400 border border-amber-500/30' :
-              'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-            }`}>
+            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#4D5A8F]/30 text-[#CED8F2] border border-[#6D7CB0]/40">
               {healthScore}%
             </span>
           </div>
@@ -113,17 +107,17 @@ export default function Sidebar({ isOpen, onClose }) {
                     className={({ isActive }) =>
                       `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                         isActive
-                          ? 'neu-inset text-white border-l-4 border-brand-500 font-semibold'
-                          : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
+                          ? 'bg-gradient-to-r from-[#8F9DCC] to-[#4D5A8F] text-[#F5F8FF] shadow-lg shadow-[#4D5A8F]/25 font-bold active-nav-pill'
+                          : 'text-slate-300 hover:text-[#F5F8FF] hover:bg-white/5'
                       }`
                     }
                   >
                     <div className="flex items-center gap-3">
-                      <Icon className="w-4 h-4 text-slate-400 group-hover:text-brand-400 transition-colors" />
+                      <Icon className="w-4 h-4 transition-colors" />
                       <span>{item.label}</span>
                     </div>
                     {item.highlight && (
-                      <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-brand-500/20 text-brand-300 border border-brand-500/30 uppercase tracking-wider">
+                      <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#E3EAFA] text-[#4D5A8F] border border-[#B3C0E6] uppercase tracking-wider">
                         AI
                       </span>
                     )}
@@ -147,16 +141,16 @@ export default function Sidebar({ isOpen, onClose }) {
                     className={({ isActive }) =>
                       `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                         isActive
-                          ? 'neu-inset text-white border-l-4 border-cyan-400 font-semibold'
-                          : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
+                          ? 'bg-gradient-to-r from-[#6D7CB0] to-[#8F9DCC] text-[#F5F8FF] shadow-lg shadow-[#6D7CB0]/25 font-bold active-nav-pill'
+                          : 'text-slate-300 hover:text-[#F5F8FF] hover:bg-white/5'
                       }`
                     }
                   >
                     <div className="flex items-center gap-3">
-                      <Icon className="w-4 h-4 text-slate-400 group-hover:text-cyan-400 transition-colors" />
+                      <Icon className="w-4 h-4 transition-colors" />
                       <span>{item.label}</span>
                     </div>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </NavLink>
                 );
               })}
@@ -173,16 +167,16 @@ export default function Sidebar({ isOpen, onClose }) {
                 className={({ isActive }) =>
                   `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                     isActive
-                      ? 'neu-inset text-white border-l-4 border-emerald-400 font-semibold'
-                      : 'text-slate-300 hover:text-white hover:bg-white/[0.04]'
+                      ? 'bg-gradient-to-r from-[#8F9DCC] to-[#4D5A8F] text-[#F5F8FF] shadow-lg shadow-[#4D5A8F]/25 font-bold active-nav-pill'
+                      : 'text-slate-300 hover:text-[#F5F8FF] hover:bg-white/5'
                   }`
                 }
               >
                 <div className="flex items-center gap-3">
-                  <BookOpen className="w-4 h-4 text-emerald-400 group-hover:text-emerald-300 transition-colors" />
+                  <BookOpen className="w-4 h-4 transition-colors" />
                   <span>How to Use & Details</span>
                 </div>
-                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 tracking-wider">
+                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#E3EAFA] text-[#4D5A8F] border border-[#B3C0E6] tracking-wider">
                   GUIDE
                 </span>
               </NavLink>
@@ -194,7 +188,7 @@ export default function Sidebar({ isOpen, onClose }) {
         <div className="p-4 border-t border-[var(--border-subtle)] bg-[var(--bg-deep)]/60">
           <div className="flex items-center justify-between text-xs text-slate-400">
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#8F9DCC] animate-pulse"></span>
               Client Simulation Engine
             </span>
             <span className="font-mono text-[10px]">v1.0-prod</span>

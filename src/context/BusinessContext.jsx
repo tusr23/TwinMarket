@@ -13,7 +13,10 @@ export function BusinessProvider({ children }) {
   const [business, setBusiness] = useState(() => loadActiveBusiness());
   const [currency, setCurrency] = useState('INR'); // 'INR', 'USD', 'EUR', 'GBP'
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('twinmarket_ai_theme') || 'cyber-violet';
+    const saved = localStorage.getItem('twinmarket_ai_theme');
+    if (saved === 'barvinok-light') return 'barvinok-light';
+    if (saved === 'monochrome-black') return 'monochrome-black';
+    return 'barvinok-dark';
   });
   const [toast, setToast] = useState(null);
   const [simulationTick, setSimulationTick] = useState(0);

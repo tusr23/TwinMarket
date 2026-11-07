@@ -189,11 +189,11 @@ export default function PlatformGuide() {
       path: '/reports',
       icon: FileText,
       badge: 'Export & Theming',
-      summary: 'Generate print-ready executive reports, download full database backups in JSON, and select from 5 trending UI themes.',
+      summary: 'Generate print-ready executive reports, download full database backups in JSON, and experience the Holst "Барвинок" (Barvinok) 7-shade periwinkle design palette.',
       howToTest: [
         'Navigate to Business Reports and click "Print Full Report" for clean print styling.',
         'Click "Export Data JSON" to save a timestamped backup file to your computer.',
-        'Use the Theme dropdown in the Header or Settings to switch between Cyber Violet, Emerald Matrix, Bloomberg Gold, and more.'
+        'Toggle between Midnight Twilight and Frost Porcelain Light mode using the Header switch or visit the Settings gallery to select Барвинок Midnight Dark, Porcelain Light, or Onyx.'
       ],
       proTip: 'All business progress is automatically persisted in your browser’s LocalStorage—no account creation or server required.'
     }
@@ -297,7 +297,7 @@ export default function PlatformGuide() {
     },
     {
       q: 'How do I switch color themes?',
-      a: 'Click the Palette dropdown in the top Header (next to the currency selector) or visit the visual theme gallery in the Settings page. You can choose between Cyber Violet, Emerald Matrix, Electric Azure, Bloomberg Gold, and Sunset Rose.'
+      a: 'Use the Light / Dark mode switch in the top Header or visit the theme gallery in Settings to choose between Bankio Pine, Bankio Obsidian, and Onyx Monochrome.'
     }
   ];
 
@@ -400,7 +400,7 @@ export default function PlatformGuide() {
                   className="glass-card rounded-2xl p-6 lg:p-7 border-[var(--border-card)] hover:border-brand-500/40 transition-all flex flex-col lg:flex-row lg:items-start justify-between gap-6 group"
                 >
                   <div className="flex items-start gap-4 flex-1">
-                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-600 to-cyanAccent-400 p-0.5 shrink-0 shadow-lg shadow-brand-500/20">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-white via-zinc-200 to-zinc-400 p-0.5 shrink-0 shadow-lg shadow-white/10">
                       <div className="w-full h-full bg-[var(--bg-card)] rounded-[14px] flex items-center justify-center font-mono font-extrabold text-sm text-cyanAccent-400">
                         {s.step}
                       </div>
@@ -567,7 +567,7 @@ export default function PlatformGuide() {
               </div>
               <h3 className="text-sm font-bold text-white mb-1">Tailwind 3 Design System</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Dynamic CSS variable tokens supporting 5 curated themes (Cyber Violet, Emerald Matrix, Electric Azure, Bloomberg Gold, Sunset Rose).
+                Dynamic CSS variable tokens supporting high-contrast Black & White monochrome themes (Onyx Black, Pure White, Carbon Charcoal).
               </p>
             </div>
           </div>

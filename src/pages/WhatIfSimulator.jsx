@@ -271,7 +271,7 @@ export default function WhatIfSimulator() {
             </div>
 
             {/* Simulated What-If */}
-            <div className="glass-card rounded-2xl p-5 border-cyan-500/40 bg-gradient-to-br from-[#0F1523] to-[#121B32]">
+            <div className="glass-card rounded-2xl p-5 border-white/30 bg-[var(--bg-card)]">
               <span className="text-[10px] font-bold uppercase tracking-wider text-cyanAccent-400 block pb-2 border-b border-slate-800 mb-3">
                 Simulated What-If Outcome
               </span>
@@ -322,13 +322,13 @@ export default function WhatIfSimulator() {
             <div className="h-56 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={comparisonChartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" vertical={false} />
-                  <XAxis dataKey="metric" stroke="#64748B" fontSize={11} tickLine={false} />
-                  <YAxis stroke="#64748B" fontSize={11} tickLine={false} />
-                  <Tooltip contentStyle={{ backgroundColor: '#0F1523', borderColor: '#334155', borderRadius: '12px', fontSize: '12px' }} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
+                  <XAxis dataKey="metric" stroke="#8F9DCC" fontSize={11} tickLine={false} />
+                  <YAxis stroke="#8F9DCC" fontSize={11} tickLine={false} />
+                  <Tooltip contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }} />
                   <Legend wrapperStyle={{ fontSize: '12px' }} />
-                  <Bar dataKey="Baseline" fill="#4F46E5" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="What-If Scenario" fill="#06B6D4" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="Baseline" fill="#6D7CB0" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="What-If Scenario" fill="#8F9DCC" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

@@ -3,19 +3,15 @@ import { NavLink } from 'react-router-dom';
 import {
   Menu,
   Play,
-  RotateCcw,
   Bell,
-  DollarSign,
   AlertTriangle,
-  CheckCircle2,
-  TrendingUp,
   X,
-  ChevronDown,
-  Palette,
-  BookOpen
+  BookOpen,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { useBusiness } from '../../context/BusinessContext.jsx';
-import { MARKET_SCENARIOS, UI_THEMES } from '../../simulation/defaultData.js';
+import { MARKET_SCENARIOS } from '../../simulation/defaultData.js';
 
 export default function Header({ onMenuToggle }) {
   const {
@@ -71,8 +67,8 @@ export default function Header({ onMenuToggle }) {
                   {business.categoryName}
                 </span>
                 {activeScenario && (
-                  <span className="hidden md:inline-flex items-center gap-1.5 text-xs px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 border border-rose-500/40 animate-pulse font-semibold">
-                    <AlertTriangle className="w-3 h-3 text-rose-400" />
+                  <span className="hidden md:inline-flex items-center gap-1.5 text-xs px-2.5 py-0.5 rounded-full bg-white/10 text-white border border-white/20 animate-pulse font-semibold">
+                    <AlertTriangle className="w-3 h-3 text-white" />
                     {activeScenario.title}
                   </span>
                 )}
@@ -84,52 +80,54 @@ export default function Header({ onMenuToggle }) {
           <div className="hidden xl:flex items-center gap-6 text-xs neu-inset px-5 py-2.5 rounded-xl border border-[var(--border-subtle)]">
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Revenue / Mo</span>
-              <span className="font-bold text-white text-xs">{formatCurrency(financials.totalRevenue)}</span>
+              <span className="font-bold text-xs">{formatCurrency(financials.totalRevenue)}</span>
             </div>
-            <div className="w-px h-6 bg-slate-800/80 shadow-sm" />
+            <div className="w-px h-6 bg-[#4D5A8F] shadow-sm" />
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Net Profit</span>
-              <span className={`font-bold text-xs ${financials.netProfit >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
+              <span className="font-bold text-xs text-[#CED8F2]">
                 {formatCurrency(financials.netProfit)}
                 <span className="text-[10px] ml-1 opacity-80">({financials.netProfitMargin}%)</span>
               </span>
             </div>
-            <div className="w-px h-6 bg-slate-800/80 shadow-sm" />
+            <div className="w-px h-6 bg-[#4D5A8F] shadow-sm" />
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Liquid Cash</span>
-              <span className="font-bold text-cyanAccent-400 text-xs">{formatCurrency(business.currentCash)}</span>
+              <span className="font-bold text-[#F5F8FF] text-xs">{formatCurrency(business.currentCash)}</span>
             </div>
-            <div className="w-px h-6 bg-slate-800/80 shadow-sm" />
+            <div className="w-px h-6 bg-[#4D5A8F] shadow-sm" />
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Health Score</span>
-              <span className="font-bold text-brand-400 text-xs">{healthScore}/100</span>
+              <span className="font-bold text-[#8F9DCC] text-xs">{healthScore}/100</span>
             </div>
           </div>
 
           {/* Right: Actions */}
           <div className="flex items-center gap-2.5">
-            {/* Theme Palette Switcher */}
-            <div className="relative flex items-center">
-              <select
-                value={theme}
-                onChange={(e) => setTheme(e.target.value)}
-                className="bg-[var(--bg-card)] border border-[var(--border-card)] text-slate-200 text-xs rounded-lg pl-7 pr-3 py-2 font-medium focus:ring-1 focus:ring-brand-500 focus:outline-none cursor-pointer appearance-none transition-colors"
-                title="Change UI Theme Palette"
-              >
-                {UI_THEMES.map((t) => (
-                  <option key={t.id} value={t.id}>
-                    {t.name}
-                  </option>
-                ))}
-              </select>
-              <Palette className="w-3.5 h-3.5 text-brand-400 absolute left-2 pointer-events-none" />
-            </div>
+            {/* Барвинок Twilight Dark / Porcelain Light Mode Switcher */}
+            <button
+              onClick={() => setTheme(theme === 'barvinok-light' ? 'barvinok-dark' : 'barvinok-light')}
+              className="neu-btn px-2.5 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer"
+              title="Toggle Барвинок Twilight Dark / Porcelain Light mode"
+            >
+              {theme === 'barvinok-light' ? (
+                <>
+                  <Moon className="w-3.5 h-3.5 text-[#4D5A8F]" />
+                  <span className="hidden sm:inline font-mono text-[11px]">Dark</span>
+                </>
+              ) : (
+                <>
+                  <Sun className="w-3.5 h-3.5 text-[#CED8F2]" />
+                  <span className="hidden sm:inline font-mono text-[11px]">Light</span>
+                </>
+              )}
+            </button>
 
             {/* Currency Selector */}
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
-              className="bg-[var(--bg-card)] border border-[var(--border-card)] text-slate-300 text-xs rounded-lg px-2.5 py-2 font-mono font-medium focus:ring-1 focus:ring-brand-500 focus:outline-none cursor-pointer transition-colors"
+              className="bg-[var(--bg-card)] border border-[var(--border-card)] text-slate-300 text-xs rounded-lg px-2.5 py-2 font-mono font-medium focus:ring-1 focus:ring-white/40 focus:outline-none cursor-pointer transition-colors"
             >
               <option value="INR">₹ INR</option>
               <option value="USD">$ USD</option>
@@ -141,12 +139,12 @@ export default function Header({ onMenuToggle }) {
             <button
               onClick={handleSimulateClick}
               disabled={isRunningSim}
-              className="relative inline-flex items-center gap-2 px-3.5 py-2 rounded-lg font-semibold text-xs text-white bg-gradient-to-r from-brand-600 via-brand-500 to-cyanAccent-400 hover:opacity-95 shadow-lg shadow-brand-500/25 active:scale-95 transition-all disabled:opacity-60 cursor-pointer"
+              className="relative inline-flex items-center gap-2 px-3.5 py-2 rounded-lg font-bold text-xs neu-btn-primary hover:opacity-95 shadow-lg active:scale-95 transition-all disabled:opacity-60 cursor-pointer"
               title="Recalculate customer demand, competitor moves, and market balance"
             >
               <Play className={`w-3.5 h-3.5 fill-current ${isRunningSim ? 'animate-spin' : ''}`} />
               <span className="hidden sm:inline">
-                {isRunningSim ? 'Simulating...' : 'RUN MARKET SIMULATION'}
+                {isRunningSim ? 'Simulating...' : 'RUN SIMULATION'}
               </span>
               <span className="sm:hidden">Run Sim</span>
             </button>
@@ -157,7 +155,7 @@ export default function Header({ onMenuToggle }) {
               className="relative px-3 py-2 rounded-xl neu-btn text-slate-300 hover:text-white transition-all cursor-pointer flex items-center gap-1.5"
               title="Platform Guide & How to Use"
             >
-              <BookOpen className="w-4 h-4 text-emerald-400" />
+              <BookOpen className="w-4 h-4 text-white" />
               <span className="hidden lg:inline text-xs font-semibold text-slate-200">Guide</span>
             </NavLink>
 
@@ -169,7 +167,7 @@ export default function Header({ onMenuToggle }) {
             >
               <Bell className="w-4 h-4" />
               {business.activityLog?.length > 0 && (
-                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand-500 shadow-[0_0_8px_rgba(var(--color-brand-500),0.8)] animate-pulse" />
+                <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] animate-pulse" />
               )}
             </button>
           </div>
@@ -177,14 +175,14 @@ export default function Header({ onMenuToggle }) {
 
         {/* Mobile scenario warning bar */}
         {activeScenario && (
-          <div className="mt-2.5 md:hidden flex items-center justify-between bg-rose-500/15 border border-rose-500/30 rounded-lg px-3 py-1.5 text-xs text-rose-300">
+          <div className="mt-2.5 md:hidden flex items-center justify-between bg-white/10 border border-white/20 rounded-lg px-3 py-1.5 text-xs text-white">
             <span className="flex items-center gap-1.5 font-medium">
-              <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
+              <AlertTriangle className="w-3.5 h-3.5 text-white" />
               Active Scenario: {activeScenario.title}
             </span>
             <button
               onClick={clearMarketScenario}
-              className="underline text-[11px] font-bold text-rose-200 ml-2"
+              className="underline text-[11px] font-bold text-white ml-2"
             >
               Clear
             </button>

@@ -251,10 +251,10 @@ export default function PricingSimulator() {
           <button
             onClick={handleApplyToLiveBusiness}
             disabled={isSimulatingCommit}
-            className="neu-btn-primary w-full py-3.5 rounded-xl font-bold text-xs text-white bg-gradient-to-r from-brand-600 via-brand-500 to-cyanAccent-400 hover:opacity-95 shadow-xl active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-2"
+            className="neu-btn-primary w-full py-3.5 rounded-xl font-bold text-xs hover:opacity-95 shadow-xl active:scale-98 transition-all cursor-pointer flex items-center justify-center gap-2"
           >
             <Play className={`w-4 h-4 fill-current ${isSimulatingCommit ? 'animate-spin' : ''}`} />
-            {isSimulatingCommit ? 'COMMITTING TO MARKET ENGINE...' : 'RUN MARKET SIMULATION & APPLY'}
+            {isSimulatingCommit ? 'COMMITTING TO MARKET ENGINE...' : 'RUN SIMULATION & APPLY PRICE'}
           </button>
         </div>
 
@@ -302,12 +302,12 @@ export default function PricingSimulator() {
             </div>
 
             {/* AFTER Card */}
-            <div className="glass-card rounded-2xl p-5 border-cyan-500/40 bg-gradient-to-br from-[#0F1523] to-[#121B32]">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-cyanAccent-400">
+            <div className="glass-card rounded-2xl p-5 border-white/30 bg-[var(--bg-card)]">
+              <div className="flex items-center justify-between pb-3 border-b border-[var(--border-subtle)] mb-3">
+                <span className="text-xs font-bold uppercase tracking-wider text-white">
                   Simulated (After Change)
                 </span>
-                <span className="text-xs font-mono font-bold text-cyanAccent-400">
+                <span className="text-xs font-mono font-bold text-white">
                   {formatCurrency(after.sellingPrice)}
                 </span>
               </div>
@@ -370,11 +370,11 @@ export default function PricingSimulator() {
             <div className="h-60 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={comparisonChartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" vertical={false} />
-                  <XAxis dataKey="metric" stroke="#64748B" fontSize={11} tickLine={false} />
-                  <YAxis stroke="#64748B" fontSize={11} tickLine={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#27272A" vertical={false} />
+                  <XAxis dataKey="metric" stroke="#71717A" fontSize={11} tickLine={false} />
+                  <YAxis stroke="#71717A" fontSize={11} tickLine={false} />
                   <Tooltip
-                    contentStyle={{ backgroundColor: '#0F1523', borderColor: '#334155', borderRadius: '12px', fontSize: '12px' }}
+                    contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
                   />
                   <Legend wrapperStyle={{ fontSize: '12px' }} />
                   <Bar dataKey="Current (Before)" fill={activeTheme.primaryColor} radius={[4, 4, 0, 0]} />
@@ -391,7 +391,7 @@ export default function PricingSimulator() {
         <div className="flex items-center justify-between mb-2">
           <div>
             <h3 className="text-base font-bold text-white flex items-center gap-2">
-              <Scale className="w-4 h-4 text-brand-400" />
+              <Scale className="w-4 h-4 text-white" />
               Dynamic Price Elasticity & Revenue Curve
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
@@ -406,9 +406,9 @@ export default function PricingSimulator() {
         <div className="h-72 w-full mt-4">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={elasticityCurve} margin={{ top: 10, right: 20, left: 10, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" vertical={false} />
-              <XAxis dataKey="percentChange" stroke="#64748B" fontSize={11} tickLine={false} />
-              <YAxis yAxisId="left" stroke="#64748B" fontSize={11} tickLine={false} tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#27272A" vertical={false} />
+              <XAxis dataKey="percentChange" stroke="#71717A" fontSize={11} tickLine={false} />
+              <YAxis yAxisId="left" stroke="#71717A" fontSize={11} tickLine={false} tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`} />
               <YAxis yAxisId="right" orientation="right" stroke={activeTheme.secondaryColor} fontSize={11} tickLine={false} />
               <Tooltip
                 contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
@@ -416,8 +416,8 @@ export default function PricingSimulator() {
               />
               <Legend wrapperStyle={{ fontSize: '12px' }} />
               <Line yAxisId="left" type="monotone" dataKey="revenue" name="Expected Revenue" stroke={activeTheme.primaryColor} strokeWidth={2.5} dot={{ r: 3 }} />
-              <Line yAxisId="left" type="monotone" dataKey="profit" name="Net Profit" stroke="#10B981" strokeWidth={2.5} dot={{ r: 3 }} />
-              <Line yAxisId="right" type="monotone" dataKey="demand" name="Demand (Units)" stroke={activeTheme.secondaryColor} strokeWidth={2} strokeDasharray="5 5" dot={{ r: 3 }} />
+              <Line yAxisId="left" type="monotone" dataKey="profit" name="Net Profit" stroke={activeTheme.secondaryColor} strokeWidth={2.5} dot={{ r: 3 }} />
+              <Line yAxisId="right" type="monotone" dataKey="demand" name="Demand (Units)" stroke="#71717A" strokeWidth={2} strokeDasharray="5 5" dot={{ r: 3 }} />
             </LineChart>
           </ResponsiveContainer>
         </div>

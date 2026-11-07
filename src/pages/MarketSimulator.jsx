@@ -266,13 +266,13 @@ export default function MarketSimulator() {
           <div className="h-64 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={comparisonData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" vertical={false} />
-                <XAxis dataKey="metric" stroke="#64748B" fontSize={11} tickLine={false} />
-                <YAxis stroke="#64748B" fontSize={11} tickLine={false} />
-                <Tooltip contentStyle={{ backgroundColor: '#0F1523', borderColor: '#334155', borderRadius: '12px', fontSize: '12px' }} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
+                <XAxis dataKey="metric" stroke="#8F9DCC" fontSize={11} tickLine={false} />
+                <YAxis stroke="#8F9DCC" fontSize={11} tickLine={false} />
+                <Tooltip contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }} />
                 <Legend wrapperStyle={{ fontSize: '12px' }} />
-                <Bar dataKey="Baseline Market" fill="#4F46E5" radius={[4, 4, 0, 0]} />
-                <Bar dataKey="Scenario Impact" fill="#06B6D4" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="Baseline Market" fill="#6D7CB0" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="Scenario Impact" fill="#8F9DCC" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>

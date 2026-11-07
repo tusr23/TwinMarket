@@ -189,14 +189,14 @@ export default function InventoryManagement() {
         <div className="h-64 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData} margin={{ top: 10, right: 10, left: -10, bottom: 25 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" vertical={false} />
-              <XAxis dataKey="name" stroke="#64748B" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" />
-              <YAxis stroke="#64748B" fontSize={11} tickLine={false} />
-              <Tooltip contentStyle={{ backgroundColor: '#0F1523', borderColor: '#334155', borderRadius: '12px', fontSize: '12px' }} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
+              <XAxis dataKey="name" stroke="#8F9DCC" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" />
+              <YAxis stroke="#8F9DCC" fontSize={11} tickLine={false} />
+              <Tooltip contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }} />
               <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-              <Bar dataKey="CurrentStock" name="Current Stock" fill="#6366F1" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="SafetyBuffer" name="Min Safety Buffer" fill="#F59E0B" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="PredictedDemand" name="Predicted Demand" fill="#06B6D4" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="CurrentStock" name="Current Stock" fill="#8F9DCC" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="SafetyBuffer" name="Min Safety Buffer" fill="#F5F8FF" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="PredictedDemand" name="Predicted Demand" fill="#6D7CB0" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -298,7 +298,7 @@ export default function InventoryManagement() {
       {/* Add Product Modal */}
       {isAddModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
-          <div className="bg-[#0F1523] border border-slate-800 rounded-3xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+          <div className="bg-[var(--bg-card)] border border-[var(--neu-border)] rounded-3xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-6">
               <div>
                 <h3 className="text-xl font-extrabold text-white">Add New Catalog Product</h3>

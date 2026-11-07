@@ -5,17 +5,17 @@ export default function NotificationToast({ toast, onClose }) {
   if (!toast) return null;
 
   const icons = {
-    success: <CheckCircle2 className="w-5 h-5 text-emerald-400" />,
-    warning: <AlertTriangle className="w-5 h-5 text-amber-400" />,
-    error: <AlertCircle className="w-5 h-5 text-rose-400" />,
-    info: <Info className="w-5 h-5 text-cyanAccent-400" />
+    success: <CheckCircle2 className="w-5 h-5 text-white" />,
+    warning: <AlertTriangle className="w-5 h-5 text-zinc-300" />,
+    error: <AlertCircle className="w-5 h-5 text-zinc-400" />,
+    info: <Info className="w-5 h-5 text-white" />
   };
 
   const borders = {
-    success: 'border-emerald-500/40 bg-slate-900/95 shadow-emerald-500/10',
-    warning: 'border-amber-500/40 bg-slate-900/95 shadow-amber-500/10',
-    error: 'border-rose-500/40 bg-slate-900/95 shadow-rose-500/10',
-    info: 'border-cyan-500/40 bg-slate-900/95 shadow-cyan-500/10'
+    success: 'border-white/30 bg-black/95 text-white shadow-2xl',
+    warning: 'border-zinc-400/30 bg-black/95 text-white shadow-2xl',
+    error: 'border-zinc-500/30 bg-black/95 text-white shadow-2xl',
+    info: 'border-white/20 bg-black/95 text-white shadow-2xl'
   };
 
   return (

@@ -211,9 +211,9 @@ export default function MyBusiness() {
             </h3>
 
             <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-gradient-to-br from-slate-900 to-[#131B2E] border border-slate-800">
+              <div className="p-4 rounded-xl neu-inset border border-[var(--border-subtle)]">
                 <span className="text-xs text-slate-400 block">Current Liquid Cash Reserves</span>
-                <h4 className="text-3xl font-extrabold text-cyanAccent-400 mt-1">
+                <h4 className="text-3xl font-extrabold text-white mt-1">
                   {formatCurrency(business.currentCash)}
                 </h4>
                 <div className="flex items-center justify-between text-xs text-slate-400 mt-3 pt-3 border-t border-slate-800">

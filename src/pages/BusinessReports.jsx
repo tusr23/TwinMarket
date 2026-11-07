@@ -85,7 +85,7 @@ export default function BusinessReports() {
       </div>
 
       {/* Printable Report Document Card */}
-      <div className="glass-card rounded-3xl p-8 lg:p-12 border-slate-800 space-y-10 bg-[#0B0F19]/95 text-slate-100 print:bg-white print:text-slate-900 print:border-none print:shadow-none">
+      <div className="glass-card rounded-3xl p-8 lg:p-12 border-[var(--border-card)] space-y-10 bg-[var(--bg-card)] text-[var(--text-primary,#ffffff)] print:bg-white print:text-slate-900 print:border-none print:shadow-none">
         {/* Document Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-8 border-b border-slate-800 print:border-slate-300 gap-4">
           <div>

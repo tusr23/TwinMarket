@@ -18,10 +18,10 @@ export default function HealthScoreGauge({
   const strokeDashoffset = circumference - (score / 100) * circumference;
 
   const getScoreTier = (val) => {
-    if (val >= 85) return { label: 'Optimal Health', color: 'text-emerald-400', stroke: '#10B981', bg: 'bg-emerald-500/10' };
-    if (val >= 70) return { label: 'Strong Performance', color: 'text-brand-400', stroke: 'rgb(var(--color-brand-500))', bg: 'bg-brand-500/10' };
-    if (val >= 50) return { label: 'Moderate Risk', color: 'text-amber-400', stroke: '#F59E0B', bg: 'bg-amber-500/10' };
-    return { label: 'Critical Distress', color: 'text-rose-400', stroke: '#F43F5E', bg: 'bg-rose-500/10' };
+    if (val >= 85) return { label: 'Optimal Health', color: 'text-[#F5F8FF]', stroke: '#8F9DCC', bg: 'bg-[#8F9DCC]/20' };
+    if (val >= 70) return { label: 'Strong Performance', color: 'text-[#CED8F2]', stroke: '#6D7CB0', bg: 'bg-[#6D7CB0]/20' };
+    if (val >= 50) return { label: 'Moderate Risk', color: 'text-amber-400', stroke: '#F59E0B', bg: 'bg-amber-500/15' };
+    return { label: 'Critical Distress', color: 'text-rose-400', stroke: '#F43F5E', bg: 'bg-rose-500/15' };
   };
 
   const tier = getScoreTier(score);
@@ -30,8 +30,8 @@ export default function HealthScoreGauge({
     <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h4 className="text-sm font-bold text-white flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-brand-400" />
+          <h4 className="text-sm font-bold flex items-center gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#8F9DCC]" />
             Enterprise Health Score
           </h4>
           <p className="text-xs text-slate-400 mt-0.5">Composite algorithmic evaluation</p>
@@ -51,7 +51,7 @@ export default function HealthScoreGauge({
                 cx="80"
                 cy="80"
                 r={radius}
-                className="stroke-slate-800"
+                stroke="#273054"
                 strokeWidth="12"
                 fill="transparent"
               />
@@ -77,7 +77,7 @@ export default function HealthScoreGauge({
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="text-4xl font-extrabold text-white tracking-tight"
+                className="text-4xl font-extrabold tracking-tight"
               >
                 {score}
               </motion.span>
@@ -92,12 +92,12 @@ export default function HealthScoreGauge({
         <div className="md:col-span-7 space-y-3">
           <div className="space-y-1.5">
             <div className="flex justify-between text-xs">
-              <span className="text-slate-300 font-medium">Profitability (25%)</span>
-              <span className="text-white font-bold">{subscores.profitability}%</span>
+              <span className="text-slate-400 font-medium">Profitability (25%)</span>
+              <span className="font-bold">{subscores.profitability}%</span>
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-gradient-to-r from-brand-500 to-indigo-400 rounded-full transition-all duration-700"
+                className="h-full bg-[#8F9DCC] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.profitability}%` }}
               />
             </div>
@@ -105,12 +105,12 @@ export default function HealthScoreGauge({
 
           <div className="space-y-1.5">
             <div className="flex justify-between text-xs">
-              <span className="text-slate-300 font-medium">Demand Traction (20%)</span>
-              <span className="text-white font-bold">{subscores.demandTraction}%</span>
+              <span className="text-slate-400 font-medium">Demand Traction (20%)</span>
+              <span className="font-bold">{subscores.demandTraction}%</span>
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-gradient-to-r from-cyanAccent-400 to-blue-500 rounded-full transition-all duration-700"
+                className="h-full bg-[#6D7CB0] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.demandTraction}%` }}
               />
             </div>
@@ -118,12 +118,12 @@ export default function HealthScoreGauge({
 
           <div className="space-y-1.5">
             <div className="flex justify-between text-xs">
-              <span className="text-slate-300 font-medium">Market Share Defensibility (20%)</span>
-              <span className="text-white font-bold">{subscores.marketShare}%</span>
+              <span className="text-slate-400 font-medium">Market Share Defensibility (20%)</span>
+              <span className="font-bold">{subscores.marketShare}%</span>
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-700"
+                className="h-full bg-[#CED8F2] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.marketShare}%` }}
               />
             </div>
@@ -131,12 +131,12 @@ export default function HealthScoreGauge({
 
           <div className="space-y-1.5">
             <div className="flex justify-between text-xs">
-              <span className="text-slate-300 font-medium">Inventory Turnover & Buffer (15%)</span>
-              <span className="text-white font-bold">{subscores.inventoryHealth}%</span>
+              <span className="text-slate-400 font-medium">Inventory Turnover & Buffer (15%)</span>
+              <span className="font-bold">{subscores.inventoryHealth}%</span>
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full transition-all duration-700"
+                className="h-full bg-[#4D5A8F] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.inventoryHealth}%` }}
               />
             </div>
@@ -144,12 +144,12 @@ export default function HealthScoreGauge({
 
           <div className="space-y-1.5">
             <div className="flex justify-between text-xs">
-              <span className="text-slate-300 font-medium">Financial Runway & Stability (20%)</span>
-              <span className="text-white font-bold">{subscores.financialStability}%</span>
+              <span className="text-slate-400 font-medium">Financial Runway & Stability (20%)</span>
+              <span className="font-bold">{subscores.financialStability}%</span>
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full transition-all duration-700"
+                className="h-full bg-[#B3C0E6] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.financialStability}%` }}
               />
             </div>

@@ -64,9 +64,9 @@ export default function CompetitorIntelligence() {
 
   // Pie chart data
   const pieData = [
-    { name: business.name, value: competitorAnalysis.userMarketShare, color: '#6366F1' },
+    { name: business.name, value: competitorAnalysis.userMarketShare, color: '#8F9DCC' },
     ...competitors.map((c, i) => {
-      const colors = ['#06B6D4', '#10B981', '#F59E0B', '#EC4899'];
+      const colors = ['#6D7CB0', '#B3C0E6', '#CED8F2', '#4D5A8F'];
       return {
         name: c.name,
         value: c.marketShare,
@@ -247,7 +247,7 @@ export default function CompetitorIntelligence() {
                   ))}
                 </Pie>
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#0F1523', borderColor: '#334155', borderRadius: '12px', fontSize: '12px' }}
+                  contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
                   formatter={(val) => [`${val}%`, 'Share']}
                 />
                 <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
@@ -268,13 +268,13 @@ export default function CompetitorIntelligence() {
           <div className="h-64 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="75%" data={radarData}>
-                <PolarGrid stroke="#334155" />
-                <PolarAngleAxis dataKey="subject" stroke="#94A3B8" fontSize={11} />
-                <PolarRadiusAxis stroke="#475569" angle={30} domain={[0, 100]} />
-                <Radar name="Your Store" dataKey="User" stroke="#6366F1" fill="#6366F1" fillOpacity={0.4} />
-                <Radar name="Market Average" dataKey="MarketAvg" stroke="#06B6D4" fill="#06B6D4" fillOpacity={0.2} />
+                <PolarGrid stroke="#4D5A8F40" />
+                <PolarAngleAxis dataKey="subject" stroke="#CED8F2" fontSize={11} />
+                <PolarRadiusAxis stroke="#6D7CB0" angle={30} domain={[0, 100]} />
+                <Radar name="Your Store" dataKey="User" stroke="#8F9DCC" fill="#8F9DCC" fillOpacity={0.4} />
+                <Radar name="Market Average" dataKey="MarketAvg" stroke="#6D7CB0" fill="#6D7CB0" fillOpacity={0.25} />
                 <Legend wrapperStyle={{ fontSize: '12px' }} />
-                <Tooltip contentStyle={{ backgroundColor: '#0F1523', borderColor: '#334155', borderRadius: '12px', fontSize: '12px' }} />
+                <Tooltip contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }} />
               </RadarChart>
             </ResponsiveContainer>
           </div>

@@ -53,7 +53,7 @@ export default function Dashboard() {
   const marketShareData = [
     { name: business.name, value: competitorAnalysis.userMarketShare, color: activeTheme.primaryColor },
     ...competitorAnalysis.competitors.map((c, i) => {
-      const colors = [activeTheme.secondaryColor, '#10B981', '#F59E0B', '#EC4899'];
+      const colors = [activeTheme.secondaryColor, '#CED8F2', '#B3C0E6', '#4D5A8F', '#273054'];
       return {
         name: c.name,
         value: c.marketShare,
@@ -66,11 +66,11 @@ export default function Dashboard() {
     <div className="space-y-8 animate-fade-in pb-12">
       {/* Top Banner / Hero */}
       <div className="relative overflow-hidden rounded-3xl neu-card p-6 lg:p-8 border border-[var(--neu-border)]">
-        <div className="absolute right-0 top-0 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute right-0 top-0 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/15 border border-brand-500/30 text-brand-300 text-xs font-semibold mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-brand-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-white" />
               Autonomous Market Intelligence Active
             </div>
             <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
@@ -86,14 +86,14 @@ export default function Dashboard() {
               to="/pricing-simulator"
               className="px-4 py-2.5 rounded-xl font-semibold text-xs text-white neu-btn flex items-center gap-2 transition-all cursor-pointer"
             >
-              <TrendingUp className="w-4 h-4 text-cyanAccent-400" />
+              <TrendingUp className="w-4 h-4 text-white" />
               Simulate Price
             </NavLink>
             <NavLink
               to="/advisor"
-              className="px-4 py-2.5 rounded-xl font-semibold text-xs text-white neu-btn-primary flex items-center gap-2 transition-all cursor-pointer"
+              className="px-4 py-2.5 rounded-xl font-bold text-xs neu-btn-primary flex items-center gap-2 transition-all cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-white" />
+              <Sparkles className="w-4 h-4" />
               AI Advisor Chat
             </NavLink>
           </div>
@@ -259,14 +259,14 @@ export default function Dashboard() {
                     <stop offset="95%" stopColor={activeTheme.primaryColor} stopOpacity={0.0} />
                   </linearGradient>
                   <linearGradient id="colorProf" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#10B981" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#10B981" stopOpacity={0.0} />
+                    <stop offset="5%" stopColor={activeTheme.secondaryColor} stopOpacity={0.4} />
+                    <stop offset="95%" stopColor={activeTheme.secondaryColor} stopOpacity={0.0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" vertical={false} />
-                <XAxis dataKey="month" stroke="#64748B" fontSize={11} tickLine={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
+                <XAxis dataKey="month" stroke="#8F9DCC" fontSize={11} tickLine={false} />
                 <YAxis
-                  stroke="#64748B"
+                  stroke="#8F9DCC"
                   fontSize={11}
                   tickLine={false}
                   tickFormatter={(val) => `₹${(val / 1000).toFixed(0)}k`}
@@ -276,7 +276,7 @@ export default function Dashboard() {
                   formatter={(val) => [formatCurrency(val)]}
                 />
                 <Area type="monotone" dataKey="revenue" name="Revenue" stroke={activeTheme.primaryColor} strokeWidth={2.5} fillOpacity={1} fill="url(#colorRev)" />
-                <Area type="monotone" dataKey="profit" name="Net Profit" stroke="#10B981" strokeWidth={2} fillOpacity={1} fill="url(#colorProf)" />
+                <Area type="monotone" dataKey="profit" name="Net Profit" stroke={activeTheme.secondaryColor} strokeWidth={2} fillOpacity={1} fill="url(#colorProf)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -300,7 +300,7 @@ export default function Dashboard() {
               <h3 className="text-base font-bold text-white">Customer Demand vs Fulfillment Capacity</h3>
               <p className="text-xs text-slate-400 mt-0.5">Estimated buyer volume vs available stock units per SKU</p>
             </div>
-            <NavLink to="/customer-demand" className="text-xs text-cyanAccent-400 font-semibold hover:underline">
+            <NavLink to="/customer-demand" className="text-xs text-[#8F9DCC] font-semibold hover:underline">
               Demand Deep Dive
             </NavLink>
           </div>
@@ -308,15 +308,15 @@ export default function Dashboard() {
           <div className="h-72 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={demand.productDemands} margin={{ top: 10, right: 10, left: -10, bottom: 25 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" vertical={false} />
-                <XAxis dataKey="name" stroke="#64748B" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" />
-                <YAxis stroke="#64748B" fontSize={11} tickLine={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
+                <XAxis dataKey="name" stroke="#8F9DCC" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" />
+                <YAxis stroke="#8F9DCC" fontSize={11} tickLine={false} />
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#0F1523', borderColor: '#334155', borderRadius: '12px', fontSize: '12px' }}
+                  contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
                 />
                 <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-                <Bar dataKey="predictedUnits" name="Customer Demand (Units)" fill="#06B6D4" radius={[6, 6, 0, 0]} />
-                <Bar dataKey="stock" name="Stock Available (Units)" fill="#4F46E5" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="predictedUnits" name="Customer Demand (Units)" fill="#8F9DCC" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="stock" name="Stock Available (Units)" fill="#6D7CB0" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -329,7 +329,7 @@ export default function Dashboard() {
               <h3 className="text-base font-bold text-white">Market Share Breakdown</h3>
               <p className="text-xs text-slate-400 mt-0.5">Competitive market equilibrium (100% pool)</p>
             </div>
-            <NavLink to="/competitors" className="text-xs text-brand-400 font-semibold hover:underline">
+            <NavLink to="/competitors" className="text-xs text-[#8F9DCC] font-semibold hover:underline">
               Competitor Radar
             </NavLink>
           </div>
@@ -351,7 +351,7 @@ export default function Dashboard() {
                   ))}
                 </Pie>
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#0F1523', borderColor: '#334155', borderRadius: '12px', fontSize: '12px' }}
+                  contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
                   formatter={(val) => [`${val}%`, 'Market Share']}
                 />
               </PieChart>

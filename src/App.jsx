@@ -27,7 +27,7 @@ function AppLayout() {
   const { toast } = useBusiness();
 
   return (
-    <div className="min-h-screen bg-[var(--bg-deep)] text-slate-100 flex transition-colors duration-300">
+    <div className="min-h-screen bg-[var(--bg-deep)] text-[var(--text-primary,#ffffff)] flex transition-colors duration-300">
       {/* Sidebar Navigation */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 

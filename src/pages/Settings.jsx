@@ -93,15 +93,15 @@ export default function Settings() {
       <div className="glass-card rounded-2xl p-6 space-y-5">
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="text-base font-bold text-white flex items-center gap-2">
-              <Palette className="w-4 h-4 text-brand-400" />
-              UI Color Combination & Theme Palette
+            <h3 className="text-base font-bold flex items-center gap-2">
+              <Palette className="w-4 h-4 text-[#8F9DCC]" />
+              Holst "Барвинок" (Barvinok) Design System
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
-              Choose from trending SaaS aesthetic combinations. Changes apply instantaneously across all dashboards, charts, and simulation modules.
+              Colors directly imported from Holst "Барвинок" (Online Education, Parenting & Stationery): #181E36 midnight canvas, #273054 deep periwinkle, #4D5A8F royal indigo, #6D7CB0 iris, #8F9DCC sky lavender, #B3C0E6 muted ice, #CED8F2 powder mist, #E3EAFA cloud, and #F5F8FF porcelain white.
             </p>
           </div>
-          <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30">
+          <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-[#E3EAFA] text-[#181E36] border border-[#8F9DCC]/40">
             {UI_THEMES.find((t) => t.id === theme)?.name} Active
           </span>
         </div>
@@ -118,7 +118,7 @@ export default function Settings() {
                 }}
                 className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between group ${
                   isSelected
-                    ? 'neu-inset border-brand-500 shadow-lg'
+                    ? 'border-[#8F9DCC] ring-2 ring-[#8F9DCC]/25 shadow-lg'
                     : 'neu-card neu-card-hover'
                 }`}
               >
@@ -129,18 +129,18 @@ export default function Settings() {
                   }} />
 
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-sm font-bold text-white flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: t.primaryColor }} />
+                    <span className="text-sm font-bold flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full border border-black/10" style={{ backgroundColor: t.primaryColor }} />
                       {t.name}
                     </span>
                     {isSelected && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3 text-brand-400" /> Active
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#E3EAFA] text-[#181E36] border border-[#8F9DCC]/40 flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3 text-[#181E36]" /> Active
                       </span>
                     )}
                   </div>
 
-                  <span className="text-[10px] font-mono font-semibold text-cyanAccent-400 block mb-2">
+                  <span className="text-[10px] font-mono font-semibold text-slate-400 block mb-2">
                     {t.style}
                   </span>
 
@@ -150,13 +150,16 @@ export default function Settings() {
                 </div>
 
                 {/* Color swatches */}
-                <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
+                <div className="pt-3 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs">
                   <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] text-slate-500 font-mono">Swatches:</span>
-                    <span className="w-4 h-4 rounded-full border border-white/20 shadow-sm" style={{ backgroundColor: t.primaryColor }} title="Primary Accent" />
-                    <span className="w-4 h-4 rounded-full border border-white/20 shadow-sm" style={{ backgroundColor: t.secondaryColor }} title="Secondary Highlight" />
+                    <span className="text-[10px] text-slate-400 font-mono">Swatches:</span>
+                    <span className="w-4 h-4 rounded-full border border-white/20 shadow-sm" style={{ backgroundColor: t.primaryColor }} title="Primary" />
+                    <span className="w-4 h-4 rounded-full border border-white/20 shadow-sm" style={{ backgroundColor: t.secondaryColor }} title="Secondary" />
+                    {t.accentColor && (
+                      <span className="w-4 h-4 rounded-full border border-white/20 shadow-sm" style={{ backgroundColor: t.accentColor }} title="Accent" />
+                    )}
                   </div>
-                  <span className="text-[11px] font-semibold text-brand-400 group-hover:underline">
+                  <span className="text-[11px] font-semibold text-[#8F9DCC] group-hover:text-[#F5F8FF]">
                     {isSelected ? 'Selected' : 'Apply Theme'}
                   </span>
                 </div>
@@ -169,7 +172,7 @@ export default function Settings() {
       {/* Currency & Regional Settings */}
       <div className="glass-card rounded-2xl p-6 space-y-4">
         <h3 className="text-base font-bold text-white flex items-center gap-2">
-          <DollarSign className="w-4 h-4 text-cyanAccent-400" />
+          <DollarSign className="w-4 h-4 text-white" />
           Display Currency
         </h3>
         <p className="text-xs text-slate-400">
@@ -190,7 +193,7 @@ export default function Settings() {
                 onClick={() => setCurrency(curr.id)}
                 className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
                   isSelected
-                    ? 'neu-inset border-brand-500 shadow-inner'
+                    ? 'neu-inset border-white shadow-inner'
                     : 'neu-btn'
                 }`}
               >
@@ -205,7 +208,7 @@ export default function Settings() {
       {/* LocalStorage Data & Snapshots */}
       <div className="glass-card rounded-2xl p-6 space-y-6">
         <h3 className="text-base font-bold text-white flex items-center gap-2">
-          <Shield className="w-4 h-4 text-brand-400" />
+          <Shield className="w-4 h-4 text-white" />
           Data Backup, Export & Recovery
         </h3>
         <p className="text-xs text-slate-400">

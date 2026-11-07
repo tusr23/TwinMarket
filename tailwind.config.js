@@ -34,6 +34,33 @@ export default {
         emeraldAccent: {
           400: 'rgb(var(--color-emerald-400) / <alpha-value>)',
           500: 'rgb(var(--color-emerald-500) / <alpha-value>)',
+        },
+        barvinok: {
+          700: '#181E36',
+          600: '#252D50',
+          500: '#4D5A8F',
+          400: '#6D7CB0',
+          300: '#8F9DCC',
+          200: '#B3C0E6',
+          100: '#CED8F2',
+          50: '#E3EAFA',
+          porcelain: '#F5F8FF',
+        },
+        groza: {
+          ink: '#12141F',
+          card: '#232739',
+          steel: '#383E5C',
+          iris: '#4F5580',
+          slate: '#7B81A8',
+          mist: '#AFB4CE',
+          frost: '#E4E6F0',
+        },
+        pine: {
+          DEFAULT: '#8F9DCC',
+          dark: '#181E36',
+          teal: '#6D7CB0',
+          light: '#CED8F2',
+          mint: '#E3EAFA',
         }
       },
       boxShadow: {

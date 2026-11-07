@@ -300,59 +300,42 @@ export const DEMO_BUSINESS = {
 
 export const UI_THEMES = [
   {
-    id: 'cyber-violet',
-    name: 'Cyber Violet',
-    tag: 'Trending Default',
-    style: 'Linear & Raycast AI',
-    primaryColor: '#8B5CF6',
-    secondaryColor: '#22D3EE',
-    previewGradient: 'from-violet-600 via-purple-600 to-cyan-400',
-    dotBg: 'bg-violet-500',
-    description: 'Electric Violet paired with Neon Cyan over deep obsidian charcoal.'
+    id: 'barvinok-dark',
+    name: 'Барвинок Twilight Dark',
+    tag: 'Imported Palette',
+    style: 'Royal Periwinkle & Slate Indigo',
+    primaryColor: '#8F9DCC',
+    secondaryColor: '#6D7CB0',
+    accentColor: '#F5F8FF',
+    darkBg: '#181E36',
+    previewGradient: 'from-[#181E36] via-[#4D5A8F] to-[#CED8F2]',
+    dotBg: 'bg-[#8F9DCC]',
+    description: 'Imported from Holst "Барвинок" (Periwinkle): 7-shade palette from #4D5A8F royal periwinkle, #6D7CB0 iris, #8F9DCC sky lavender, #B3C0E6, #CED8F2, #E3EAFA, to #F5F8FF porcelain white.'
   },
   {
-    id: 'emerald-matrix',
-    name: 'Emerald Matrix',
-    tag: 'Fintech & ESG',
-    style: 'Supabase & Bloomberg ESG',
-    primaryColor: '#10B981',
-    secondaryColor: '#38BDF8',
-    previewGradient: 'from-emerald-500 via-teal-500 to-sky-400',
-    dotBg: 'bg-emerald-500',
-    description: 'High-contrast Electric Emerald with mint glow and crisp cyan accents.'
+    id: 'barvinok-light',
+    name: 'Барвинок Porcelain Light',
+    tag: 'Porcelain Cloud Mode',
+    style: 'Whisper White & Royal Periwinkle',
+    primaryColor: '#4D5A8F',
+    secondaryColor: '#6D7CB0',
+    accentColor: '#181E36',
+    darkBg: '#F5F8FF',
+    previewGradient: 'from-[#F5F8FF] via-[#CED8F2] to-[#4D5A8F]',
+    dotBg: 'bg-[#4D5A8F]',
+    description: 'Luminous daylight aesthetic with #F5F8FF porcelain canvas, #4D5A8F royal periwinkle primary, and soft #CED8F2 borders.'
   },
   {
-    id: 'electric-azure',
-    name: 'Electric Azure',
-    tag: 'Enterprise Silicon',
-    style: 'Stripe & Ramp',
-    primaryColor: '#3B82F6',
-    secondaryColor: '#2DD4BF',
-    previewGradient: 'from-blue-600 via-indigo-600 to-teal-400',
-    dotBg: 'bg-blue-500',
-    description: 'Vibrant Silicon Valley Cobalt Blue accented by cool mint and teal.'
-  },
-  {
-    id: 'amber-gold',
-    name: 'Bloomberg Gold',
-    tag: 'Terminal Wealth',
-    style: 'Bloomberg Financial',
-    primaryColor: '#F59E0B',
-    secondaryColor: '#06B6D4',
-    previewGradient: 'from-amber-500 via-orange-500 to-cyan-400',
-    dotBg: 'bg-amber-500',
-    description: 'Prestigious Bloomberg Amber/Gold with dark slate contrast.'
-  },
-  {
-    id: 'sunset-rose',
-    name: 'Sunset Rose',
-    tag: 'Modern Luxury',
-    style: 'Cyberpunk & Creative',
-    primaryColor: '#F43F5E',
-    secondaryColor: '#C084FC',
-    previewGradient: 'from-rose-500 via-pink-600 to-purple-400',
-    dotBg: 'bg-rose-500',
-    description: 'Neon Crimson Rose paired with vivid Amethyst purple highlights.'
+    id: 'monochrome-black',
+    name: 'Onyx Monochrome',
+    tag: 'Minimalist Noir',
+    style: 'Pure Black & White',
+    primaryColor: '#181818',
+    secondaryColor: '#71717A',
+    accentColor: '#FFFFFF',
+    previewGradient: 'from-black via-zinc-900 to-zinc-700',
+    dotBg: 'bg-black',
+    description: 'Classic high-contrast black and white monochrome with sleek slate borders.'
   }
 ];
 
