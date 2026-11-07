@@ -19,7 +19,7 @@ export default function NotificationToast({ toast, onClose }) {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 animate-bounce-short">
+    <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-50 animate-bounce-short">
       <div className={`flex items-center gap-3 px-4 py-3 rounded-xl border shadow-2xl backdrop-blur-xl ${borders[toast.type] || borders.info}`}>
         {icons[toast.type] || icons.info}
         <span className="text-sm font-medium text-slate-100 max-w-sm">

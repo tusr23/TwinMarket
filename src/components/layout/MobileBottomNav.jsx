@@ -41,7 +41,7 @@ export default function MobileBottomNav({ onMenuToggle }) {
                 <div className="relative">
                   <Icon className={`w-5 h-5 transition-transform ${isActive ? 'scale-110 text-[#8F9DCC]' : ''}`} />
                   {tab.isAi && (
-                    <span className="absolute -top-1 -right-2 text-[8px] font-extrabold px-1 py-0.2 rounded-full bg-[#E3EAFA] text-[#4D5A8F] leading-none">
+                    <span className="absolute -top-1 -right-2 text-[8px] font-extrabold px-1 py-0.5 rounded-full bg-[#E3EAFA] text-[#4D5A8F] leading-none">
                       AI
                     </span>
                   )}
@@ -70,3 +70,4 @@ export default function MobileBottomNav({ onMenuToggle }) {
     </nav>
   );
 }
+

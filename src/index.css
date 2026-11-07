@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer base {
   /* =========================================================
@@ -254,6 +254,9 @@
     border: 1px solid var(--border-subtle, #E5E7EB);
   }
 
+  [data-theme="barvinok-dark"] .neu-inset,
+  [data-theme="groza-dark"] .neu-inset,
+  [data-theme="olivar-midnight"] .neu-inset,
   [data-theme="bankio-dark"] .neu-inset,
   [data-theme="monochrome-black"] .neu-inset {
     background-color: var(--bg-deep);
@@ -315,6 +318,18 @@
     transform: translateY(1px) scale(0.98);
   }
 
+  [data-theme="monochrome-black"] .neu-btn-primary {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25) !important;
+  }
+
+  [data-theme="monochrome-black"] .neu-btn-primary:hover {
+    background: #e4e4e7 !important;
+    color: #000000 !important;
+  }
+
   /* Active Navigation Item Pill */
   .active-nav-pill {
     background: linear-gradient(135deg, #8F9DCC, #4D5A8F) !important;
@@ -324,6 +339,15 @@
   }
   .active-nav-pill * {
     color: #F5F8FF !important;
+  }
+
+  [data-theme="monochrome-black"] .active-nav-pill {
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2) !important;
+  }
+  [data-theme="monochrome-black"] .active-nav-pill * {
+    color: #000000 !important;
   }
 
   /* Барвинок Deep Slate Highlight Card */
