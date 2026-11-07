@@ -97,18 +97,18 @@ export default function MarketSimulator() {
   ];
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Header Banner */}
-      <div className="glass-card rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-slate-800">
+      <div className="glass-card rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 border-slate-800">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-brand-400 mb-2">
             <Zap className="w-4 h-4" />
             <span>Macroeconomic Stress Testing & Scenario Engine</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
             Market Competition Simulator
           </h2>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
             Test business resilience against 8 real-world market shocks: price wars, hyper-inflation, recession, supplier delays, and peak festive spikes.
           </p>
         </div>
@@ -204,8 +204,8 @@ export default function MarketSimulator() {
         </div>
 
         {/* 6 Key Impact Delta Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
-          <div className="p-4 rounded-xl neu-inset">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+          <div className="p-3 sm:p-4 rounded-xl neu-inset">
             <span className="text-[10px] font-bold uppercase text-slate-400 block">Monthly Revenue</span>
             <span className="text-lg font-bold text-white mt-1 block">{formatCurrency(simFin.totalRevenue)}</span>
             <span className={`text-xs font-semibold ${simFin.totalRevenue >= baselineFin.totalRevenue ? 'text-emerald-400' : 'text-rose-400'}`}>

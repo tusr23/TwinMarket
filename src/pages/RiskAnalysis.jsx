@@ -72,7 +72,7 @@ export default function RiskAnalysis() {
       {/* 5x5 Heatmap & Detailed Risk Inspection Panel */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* 5x5 Heatmap (7 cols) */}
-        <div className="lg:col-span-7 glass-card rounded-2xl p-6">
+        <div className="lg:col-span-7 glass-card rounded-2xl p-4 sm:p-6">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="text-base font-bold text-white">5x5 Enterprise Risk Matrix</h3>
@@ -81,61 +81,63 @@ export default function RiskAnalysis() {
             <span className="text-xs text-slate-400 font-mono">Interactive Nodes</span>
           </div>
 
-          {/* Matrix Container */}
-          <div className="space-y-2">
-            {likelihoodLevels.map((lVal) => (
-              <div key={`row-${lVal}`} className="flex items-center gap-2">
-                <span className="w-14 text-[11px] font-mono font-bold text-slate-400 text-right shrink-0">
-                  L{lVal} ({lVal === 5 ? 'Extreme' : lVal === 4 ? 'High' : lVal === 3 ? 'Medium' : lVal === 2 ? 'Low' : 'Rare'})
-                </span>
-                <div className="grid grid-cols-5 gap-2 flex-1">
-                  {impactLevels.map((iVal) => {
-                    // Find if any risk is located here
-                    const matchingRisks = risksList.filter(
-                      (r) => r.likelihood === lVal && r.impact === iVal
-                    );
+          {/* Matrix Container with horizontal scroll on mobile */}
+          <div className="overflow-x-auto pb-2 -mx-2 sm:mx-0 px-2 sm:px-0">
+            <div className="min-w-[460px] space-y-2">
+              {likelihoodLevels.map((lVal) => (
+                <div key={`row-${lVal}`} className="flex items-center gap-2">
+                  <span className="w-14 text-[11px] font-mono font-bold text-slate-400 text-right shrink-0">
+                    L{lVal} ({lVal === 5 ? 'Extreme' : lVal === 4 ? 'High' : lVal === 3 ? 'Medium' : lVal === 2 ? 'Low' : 'Rare'})
+                  </span>
+                  <div className="grid grid-cols-5 gap-2 flex-1">
+                    {impactLevels.map((iVal) => {
+                      // Find if any risk is located here
+                      const matchingRisks = risksList.filter(
+                        (r) => r.likelihood === lVal && r.impact === iVal
+                      );
 
-                    return (
-                      <div
-                        key={`cell-${lVal}-${iVal}`}
-                        className={`h-14 rounded-xl border flex flex-col items-center justify-center p-1 relative transition-all ${getCellColor(
-                          lVal,
-                          iVal
-                        )}`}
-                      >
-                        <span className="text-[9px] font-mono opacity-50 absolute top-1 left-1">
-                          {lVal * iVal}
-                        </span>
-                        {matchingRisks.map((risk) => (
-                          <button
-                            key={risk.id}
-                            onClick={() => setSelectedRisk(risk)}
-                            className={`w-full py-0.5 px-1 rounded text-[9px] font-bold truncate text-center transition-transform hover:scale-105 cursor-pointer ${
-                              selectedRisk?.id === risk.id
-                                ? 'bg-white text-slate-950 shadow-md ring-2 ring-brand-400 font-extrabold'
-                                : 'bg-slate-900/80 text-white'
-                            }`}
-                            title={risk.category}
-                          >
-                            {risk.category.replace(' Risk', '')}
-                          </button>
-                        ))}
-                      </div>
-                    );
-                  })}
+                      return (
+                        <div
+                          key={`cell-${lVal}-${iVal}`}
+                          className={`h-14 rounded-xl border flex flex-col items-center justify-center p-1 relative transition-all ${getCellColor(
+                            lVal,
+                            iVal
+                          )}`}
+                        >
+                          <span className="text-[9px] font-mono opacity-50 absolute top-1 left-1">
+                            {lVal * iVal}
+                          </span>
+                          {matchingRisks.map((risk) => (
+                            <button
+                              key={risk.id}
+                              onClick={() => setSelectedRisk(risk)}
+                              className={`w-full py-0.5 px-1 rounded text-[9px] font-bold truncate text-center transition-transform hover:scale-105 cursor-pointer ${
+                                selectedRisk?.id === risk.id
+                                  ? 'bg-white text-slate-950 shadow-md ring-2 ring-brand-400 font-extrabold'
+                                  : 'bg-slate-900/80 text-white'
+                              }`}
+                              title={risk.category}
+                            >
+                              {risk.category.replace(' Risk', '')}
+                            </button>
+                          ))}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
 
-            {/* Impact Axis Label */}
-            <div className="flex items-center gap-2 pt-2">
-              <span className="w-14 shrink-0" />
-              <div className="grid grid-cols-5 gap-2 flex-1 text-center">
-                <span className="text-[10px] font-mono text-slate-400">I1 (Negligible)</span>
-                <span className="text-[10px] font-mono text-slate-400">I2 (Minor)</span>
-                <span className="text-[10px] font-mono text-slate-400">I3 (Moderate)</span>
-                <span className="text-[10px] font-mono text-slate-400">I4 (Major)</span>
-                <span className="text-[10px] font-mono text-slate-400">I5 (Severe)</span>
+              {/* Impact Axis Label */}
+              <div className="flex items-center gap-2 pt-2">
+                <span className="w-14 shrink-0" />
+                <div className="grid grid-cols-5 gap-2 flex-1 text-center">
+                  <span className="text-[10px] font-mono text-slate-400">I1 (Negligible)</span>
+                  <span className="text-[10px] font-mono text-slate-400">I2 (Minor)</span>
+                  <span className="text-[10px] font-mono text-slate-400">I3 (Moderate)</span>
+                  <span className="text-[10px] font-mono text-slate-400">I4 (Major)</span>
+                  <span className="text-[10px] font-mono text-slate-400">I5 (Severe)</span>
+                </div>
               </div>
             </div>
           </div>

@@ -81,18 +81,18 @@ export default function MyBusiness() {
   const currentStrategyObj = STRATEGIES[business.strategy?.toUpperCase()] || STRATEGIES.BALANCED;
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Header Banner */}
-      <div className="glass-card rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-slate-800">
+      <div className="glass-card rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 border-slate-800">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-brand-400 mb-2">
             <Building2 className="w-4 h-4" />
             <span>Virtual Enterprise Entity</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
             {business.name}
           </h2>
-          <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-slate-400">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-2 text-xs text-slate-400">
             <span className="flex items-center gap-1.5 text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-cyanAccent-400" />
               {business.location}
@@ -104,17 +104,17 @@ export default function MyBusiness() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
           <button
             onClick={() => setIsCreatingNew(true)}
-            className="neu-btn-primary px-4 py-2.5 rounded-xl text-xs font-semibold text-white flex items-center gap-2 shadow-lg transition-all cursor-pointer"
+            className="neu-btn-primary px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-semibold text-white flex items-center justify-center gap-2 shadow-lg transition-all cursor-pointer flex-1 sm:flex-initial"
           >
             <PlusCircle className="w-4 h-4" />
             Create New Business
           </button>
           <button
             onClick={resetToDemo}
-            className="neu-btn px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center gap-2 transition-all cursor-pointer"
+            className="neu-btn px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-xl text-xs font-semibold text-slate-300 flex items-center justify-center gap-2 transition-all cursor-pointer"
             title="Reset to default demo shop"
           >
             <RotateCcw className="w-4 h-4" />

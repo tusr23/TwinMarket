@@ -133,23 +133,23 @@ export default function StrategyComparison() {
   ];
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Header Banner */}
-      <div className="glass-card rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-slate-800">
+      <div className="glass-card rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 border-slate-800">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-brand-400 mb-2">
             <Target className="w-4 h-4" />
             <span>Strategic Direction & Growth Trajectories</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
             Business Strategy Comparison
           </h2>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
             Evaluate the mathematical trade-offs between rapid market conquest, steady balanced enterprise compounding, and ultra-high-margin cash extraction.
           </p>
         </div>
 
-        <div className="p-3.5 rounded-2xl neu-inset flex items-center gap-3">
+        <div className="p-3 sm:p-3.5 rounded-2xl neu-inset flex items-center gap-3 shrink-0">
           <span className="text-xs text-slate-400 font-medium">Currently Active:</span>
           <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 uppercase tracking-wider">
             {currentStrategyId} Strategy

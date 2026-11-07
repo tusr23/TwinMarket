@@ -21,13 +21,14 @@ import Settings from './pages/Settings.jsx';
 import WhatIfSimulator from './pages/WhatIfSimulator.jsx';
 import StrategyComparison from './pages/StrategyComparison.jsx';
 import PlatformGuide from './pages/PlatformGuide.jsx';
+import MobileBottomNav from './components/layout/MobileBottomNav.jsx';
 
 function AppLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const { toast } = useBusiness();
 
   return (
-    <div className="min-h-screen bg-[var(--bg-deep)] text-[var(--text-primary,#ffffff)] flex transition-colors duration-300">
+    <div className="min-h-screen bg-[var(--bg-deep)] text-[var(--text-primary,#ffffff)] flex transition-colors duration-300 overflow-x-hidden">
       {/* Sidebar Navigation */}
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
@@ -37,7 +38,7 @@ function AppLayout() {
         <Header onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
 
         {/* Page Content */}
-        <main className="flex-1 px-4 sm:px-6 lg:px-8 py-6 max-w-7xl w-full mx-auto">
+        <main className="flex-1 px-3 sm:px-6 lg:px-8 py-5 sm:py-6 pb-24 lg:pb-8 max-w-7xl w-full mx-auto">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/my-business" element={<MyBusiness />} />
@@ -59,6 +60,9 @@ function AppLayout() {
           </Routes>
         </main>
       </div>
+
+      {/* Mobile Bottom Navigation Bar */}
+      <MobileBottomNav onMenuToggle={() => setSidebarOpen(!sidebarOpen)} />
 
       {/* Global Notifications */}
       <NotificationToast toast={toast} />

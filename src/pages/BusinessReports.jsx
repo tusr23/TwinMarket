@@ -150,8 +150,8 @@ export default function BusinessReports() {
             3. Competitor Market Share & Intelligence
           </h3>
 
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse text-xs">
+          <div className="overflow-x-auto -mx-2 sm:mx-0">
+            <table className="w-full text-left border-collapse text-xs min-w-[550px]">
               <thead>
                 <tr className="border-b border-slate-800 print:border-slate-300 text-slate-400 print:text-slate-600 uppercase text-[10px]">
                   <th className="py-2.5 px-3">Entity Name</th>

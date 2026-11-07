@@ -54,26 +54,26 @@ export default function ProductManagement() {
   };
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Header */}
-      <div className="glass-card rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-slate-800">
+      <div className="glass-card rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 border-slate-800">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-brand-400 mb-2">
             <Package className="w-4 h-4" />
             <span>Product Catalog & Unit Economics Architecture</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
             Product Management
           </h2>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
             Configure product purchase costs, retail selling prices, quality ratings, and inspect contribution margins across your inventory.
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 w-full sm:w-auto">
           <NavLink
             to="/pricing-simulator"
-            className="neu-btn-primary px-4 py-2.5 rounded-xl text-xs font-bold text-white flex items-center gap-2 transition-all cursor-pointer"
+            className="neu-btn-primary px-4 py-2.5 rounded-xl text-xs font-bold text-white flex items-center justify-center gap-2 transition-all cursor-pointer w-full sm:w-auto"
           >
             <TrendingUp className="w-4 h-4" />
             Launch Pricing Simulator

@@ -63,35 +63,35 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Top Banner / Hero */}
-      <div className="relative overflow-hidden rounded-3xl neu-card p-6 lg:p-8 border border-[var(--neu-border)]">
+      <div className="relative overflow-hidden rounded-3xl neu-card p-5 sm:p-6 lg:p-8 border border-[var(--neu-border)]">
         <div className="absolute right-0 top-0 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-semibold mb-2.5 sm:mb-3">
               <Sparkles className="w-3.5 h-3.5 text-white" />
               Autonomous Market Intelligence Active
             </div>
-            <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
               Executive Business Overview
             </h2>
-            <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
+            <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
               Real-time multi-agent simulation model for <strong className="text-white">{business.name}</strong>. Monitor sales elasticity, inventory buffers, and competitive threat indices.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
             <NavLink
               to="/pricing-simulator"
-              className="px-4 py-2.5 rounded-xl font-semibold text-xs text-white neu-btn flex items-center gap-2 transition-all cursor-pointer"
+              className="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-semibold text-xs text-white neu-btn flex items-center gap-2 transition-all cursor-pointer"
             >
               <TrendingUp className="w-4 h-4 text-white" />
               Simulate Price
             </NavLink>
             <NavLink
               to="/advisor"
-              className="px-4 py-2.5 rounded-xl font-bold text-xs neu-btn-primary flex items-center gap-2 transition-all cursor-pointer"
+              className="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs neu-btn-primary flex items-center gap-2 transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4" />
               AI Advisor Chat
@@ -101,7 +101,7 @@ export default function Dashboard() {
       </div>
 
       {/* 8 Primary KPI Metric Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
         <MetricCard
           title="Total Monthly Revenue"
           value={formatCurrency(financials.totalRevenue)}
@@ -234,7 +234,7 @@ export default function Dashboard() {
       {/* Charts Section Row 1: Revenue Growth & Profit vs Expenses */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Revenue Growth Trend (8 cols) */}
-        <div className="lg:col-span-8 glass-card rounded-2xl p-6">
+        <div className="lg:col-span-8 glass-card rounded-2xl p-4 sm:p-6">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h3 className="text-base font-bold text-white">12-Month Revenue & Profit Trajectory</h3>
@@ -294,7 +294,7 @@ export default function Dashboard() {
       {/* Charts Section Row 2: Customer Demand Trend & Market Share */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Customer Demand Trend (7 cols) */}
-        <div className="lg:col-span-7 glass-card rounded-2xl p-6">
+        <div className="lg:col-span-7 glass-card rounded-2xl p-4 sm:p-6">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h3 className="text-base font-bold text-white">Customer Demand vs Fulfillment Capacity</h3>
@@ -323,7 +323,7 @@ export default function Dashboard() {
         </div>
 
         {/* Market Share Visualization (5 cols) */}
-        <div className="lg:col-span-5 glass-card rounded-2xl p-6">
+        <div className="lg:col-span-5 glass-card rounded-2xl p-4 sm:p-6">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h3 className="text-base font-bold text-white">Market Share Breakdown</h3>
@@ -376,7 +376,7 @@ export default function Dashboard() {
       </div>
 
       {/* Row 3: Recent Business Activities Feed */}
-      <div className="glass-card rounded-2xl p-6">
+      <div className="glass-card rounded-2xl p-4 sm:p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Activity className="w-5 h-5 text-brand-400" />

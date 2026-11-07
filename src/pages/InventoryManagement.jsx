@@ -90,33 +90,33 @@ export default function InventoryManagement() {
   }));
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Header Banner */}
-      <div className="glass-card rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-slate-800">
+      <div className="glass-card rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 border-slate-800">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-brand-400 mb-2">
             <Boxes className="w-4 h-4" />
             <span>Supply Chain & Warehouse Intelligence</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
             Inventory Management
           </h2>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
             Monitor real-time warehouse velocity, buffer safety levels, carrying overheads, and automated replenishment cycles.
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
           <button
             onClick={restockLowStockProducts}
-            className="neu-btn px-4 py-2.5 rounded-xl text-xs font-bold text-emerald-400 flex items-center gap-2 transition-all cursor-pointer"
+            className="neu-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold text-emerald-400 flex items-center gap-2 transition-all cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
             Batch Restock Low Stock
           </button>
           <button
             onClick={() => setIsAddModalOpen(true)}
-            className="neu-btn-primary px-4 py-2.5 rounded-xl text-xs font-bold text-white flex items-center gap-2 transition-all cursor-pointer"
+            className="neu-btn-primary px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold text-white flex items-center gap-2 transition-all cursor-pointer"
           >
             <PlusCircle className="w-4 h-4" />
             Add New Product
@@ -125,30 +125,30 @@ export default function InventoryManagement() {
       </div>
 
       {/* 4 Inventory Metric Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="glass-card rounded-2xl p-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
+        <div className="glass-card rounded-2xl p-4 sm:p-5">
           <span className="text-xs font-semibold uppercase text-slate-400">Total Stock On Hand</span>
-          <h3 className="text-3xl font-extrabold text-white mt-2">{inventory.totalStockUnits} Units</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">{inventory.totalStockUnits} Units</h3>
           <span className="text-xs text-slate-400 mt-2 block">{business.products.length} Active Catalog SKUs</span>
         </div>
 
-        <div className="glass-card rounded-2xl p-5">
+        <div className="glass-card rounded-2xl p-4 sm:p-5">
           <span className="text-xs font-semibold uppercase text-slate-400">Wholesale Capital Value</span>
-          <h3 className="text-3xl font-extrabold text-cyanAccent-400 mt-2">{formatCurrency(inventory.totalCostValue)}</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-cyanAccent-400 mt-2">{formatCurrency(inventory.totalCostValue)}</h3>
           <span className="text-xs text-slate-400 mt-2 block">Wholesale acquisition value</span>
         </div>
 
-        <div className="glass-card rounded-2xl p-5">
+        <div className="glass-card rounded-2xl p-4 sm:p-5">
           <span className="text-xs font-semibold uppercase text-slate-400">Retail Realization Value</span>
-          <h3 className="text-3xl font-extrabold text-brand-400 mt-2">{formatCurrency(inventory.totalRetailValue)}</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-400 mt-2">{formatCurrency(inventory.totalRetailValue)}</h3>
           <span className="text-xs text-emerald-400 font-semibold mt-2 block">
             +{formatCurrency(inventory.totalUnrealizedProfit)} Unrealized Margin
           </span>
         </div>
 
-        <div className="glass-card rounded-2xl p-5">
+        <div className="glass-card rounded-2xl p-4 sm:p-5">
           <span className="text-xs font-semibold uppercase text-slate-400">Stock Turnover Ratio</span>
-          <h3 className="text-3xl font-extrabold text-emerald-400 mt-2">{inventory.turnoverRatio}x / yr</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-2">{inventory.turnoverRatio}x / yr</h3>
           <span className="text-xs text-slate-400 mt-2 block">Health: {inventory.healthScore}/100</span>
         </div>
       </div>
@@ -232,8 +232,8 @@ export default function InventoryManagement() {
         </div>
 
         {/* Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+        <div className="overflow-x-auto -mx-2 sm:mx-0">
+          <table className="w-full text-left border-collapse min-w-[720px]">
             <thead>
               <tr className="border-b border-slate-800 text-[11px] font-bold uppercase tracking-wider text-slate-400">
                 <th className="py-3 px-4">SKU / Product</th>

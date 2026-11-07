@@ -111,17 +111,17 @@ export default function WhatIfSimulator() {
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
           <button
             onClick={handleResetSliders}
-            className="px-4 py-2.5 rounded-xl text-xs font-semibold neu-btn text-slate-300 flex items-center gap-2 cursor-pointer transition-all"
+            className="px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-semibold neu-btn text-slate-300 flex items-center justify-center gap-2 cursor-pointer transition-all flex-1 sm:flex-initial"
           >
             <RotateCcw className="w-4 h-4" />
             Reset Sliders
           </button>
           <button
             onClick={handleCommitWhatIf}
-            className="neu-btn-primary px-5 py-2.5 rounded-xl text-xs font-bold text-white shadow-lg flex items-center gap-2 cursor-pointer transition-all"
+            className="neu-btn-primary px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold text-white shadow-lg flex items-center justify-center gap-2 cursor-pointer transition-all flex-1 sm:flex-initial"
           >
             <Play className="w-4 h-4" />
             Commit To Live Business
@@ -132,7 +132,7 @@ export default function WhatIfSimulator() {
       {/* Sliders Workspace Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Sliders Panel (5 cols) */}
-        <div className="lg:col-span-5 glass-card rounded-2xl p-6 space-y-6">
+        <div className="lg:col-span-5 glass-card rounded-2xl p-4 sm:p-6 space-y-6">
           <h3 className="text-base font-bold text-white flex items-center gap-2 pb-3 border-b border-slate-800">
             <Sliders className="w-4 h-4 text-cyanAccent-400" />
             Decision Variables

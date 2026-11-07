@@ -27,8 +27,8 @@ export default function HealthScoreGauge({
   const tier = getScoreTier(score);
 
   return (
-    <div className="glass-card rounded-2xl p-6 relative overflow-hidden">
-      <div className="flex items-center justify-between mb-4">
+    <div className="glass-card rounded-2xl p-4 sm:p-6 relative overflow-hidden">
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
         <div>
           <h4 className="text-sm font-bold flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-[#8F9DCC]" />
@@ -36,7 +36,7 @@ export default function HealthScoreGauge({
           </h4>
           <p className="text-xs text-slate-400 mt-0.5">Composite algorithmic evaluation</p>
         </div>
-        <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${tier.color} border-current/30 ${tier.bg}`}>
+        <span className={`text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full border ${tier.color} border-current/30 ${tier.bg}`}>
           {tier.label}
         </span>
       </div>

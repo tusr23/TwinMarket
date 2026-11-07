@@ -61,57 +61,57 @@ export default function CustomerDemand() {
   const segmentColors = ['#8F9DCC', '#6D7CB0', '#B3C0E6', '#CED8F2', '#4D5A8F'];
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Header Banner */}
-      <div className="glass-card rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-slate-800">
+      <div className="glass-card rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 border-slate-800">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-brand-400 mb-2">
             <Activity className="w-4 h-4" />
             <span>Behavioral Economics & Micro-Forecasting</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
             Customer Demand Prediction
           </h2>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
             Multi-factor purchase propensity model evaluating price elasticity, brand loyalty coefficients, seasonal demand waves, and marketing effectiveness.
           </p>
         </div>
 
-        <div className="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-400 flex items-center gap-2">
+        <div className="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-400 flex items-center gap-2">
           <Info className="w-4 h-4 text-cyanAccent-400 shrink-0" />
           <span>All demand values are algorithmic client-side simulated estimates.</span>
         </div>
       </div>
 
       {/* Demand Key Metrics */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div className="glass-card rounded-2xl p-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
+        <div className="glass-card rounded-2xl p-4 sm:p-5">
           <span className="text-xs font-semibold uppercase text-slate-400">Total Monthly Demand</span>
-          <h3 className="text-3xl font-extrabold text-white mt-2">{demand.totalDemandUnits} Units</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-2">{demand.totalDemandUnits} Units</h3>
           <span className="text-xs text-emerald-400 font-semibold mt-2 block">+18.5% Growth Trajectory</span>
         </div>
 
-        <div className="glass-card rounded-2xl p-5">
+        <div className="glass-card rounded-2xl p-4 sm:p-5">
           <span className="text-xs font-semibold uppercase text-slate-400">Potential Gross Sales</span>
-          <h3 className="text-3xl font-extrabold text-cyanAccent-400 mt-2">{formatCurrency(demand.totalPotentialRevenue)}</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-cyanAccent-400 mt-2">{formatCurrency(demand.totalPotentialRevenue)}</h3>
           <span className="text-xs text-slate-400 mt-2 block">If 100% stock fulfillment</span>
         </div>
 
-        <div className="glass-card rounded-2xl p-5">
+        <div className="glass-card rounded-2xl p-4 sm:p-5">
           <span className="text-xs font-semibold uppercase text-slate-400">Marketing Multiplier</span>
-          <h3 className="text-3xl font-extrabold text-brand-400 mt-2">{demand.marketingMultiplier}x</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-brand-400 mt-2">{demand.marketingMultiplier}x</h3>
           <span className="text-xs text-slate-400 mt-2 block">Diminishing return efficiency</span>
         </div>
 
-        <div className="glass-card rounded-2xl p-5">
+        <div className="glass-card rounded-2xl p-4 sm:p-5">
           <span className="text-xs font-semibold uppercase text-slate-400">Seasonal Index (Oct)</span>
-          <h3 className="text-3xl font-extrabold text-amber-400 mt-2">{demand.seasonFactor}x</h3>
+          <h3 className="text-2xl sm:text-3xl font-extrabold text-amber-400 mt-2">{demand.seasonFactor}x</h3>
           <span className="text-xs text-amber-400/90 font-semibold mt-2 block">Festive Holiday Shopping Wave</span>
         </div>
       </div>
 
       {/* Interactive Marketing Spend Control */}
-      <div className="glass-card rounded-2xl p-6 border-brand-500/30">
+      <div className="glass-card rounded-2xl p-4 sm:p-6 border-brand-500/30">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="flex-1">
             <h3 className="text-base font-bold text-white flex items-center gap-2 mb-1">
@@ -231,13 +231,13 @@ export default function CustomerDemand() {
       </div>
 
       {/* SKU-Level Demand Fulfillment Breakdown */}
-      <div className="glass-card rounded-2xl p-6">
+      <div className="glass-card rounded-2xl p-4 sm:p-6">
         <h3 className="text-base font-bold text-white mb-4">
           SKU Demand & Stock Fulfillment Health
         </h3>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+        <div className="overflow-x-auto -mx-2 sm:mx-0">
+          <table className="w-full text-left border-collapse min-w-[650px]">
             <thead>
               <tr className="border-b border-slate-800 text-[11px] font-bold uppercase tracking-wider text-slate-400">
                 <th className="py-3 px-4">Product Name</th>

@@ -20,17 +20,17 @@ export default function MetricCard({
   };
 
   return (
-    <div className="glass-card glass-card-hover rounded-2xl p-5 relative overflow-hidden group">
+    <div className="glass-card glass-card-hover rounded-2xl p-4 sm:p-5 relative overflow-hidden group">
       {/* Background ambient glow */}
       <div className="absolute -right-8 -top-8 w-28 h-28 bg-[#8F9DCC]/10 rounded-full blur-2xl group-hover:bg-[#8F9DCC]/20 transition-colors pointer-events-none" />
 
-      <div className="flex items-start justify-between">
-        <div>
-          <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400 block truncate">
             {title}
           </span>
-          <div className="mt-2 flex items-baseline gap-2">
-            <h3 className="text-2xl font-extrabold tracking-tight">
+          <div className="mt-1.5 sm:mt-2 flex flex-wrap items-baseline gap-1.5 sm:gap-2">
+            <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight">
               {value}
             </h3>
             {subvalue && (
@@ -42,8 +42,8 @@ export default function MetricCard({
         </div>
 
         {Icon && (
-          <div className={`p-2.5 rounded-xl neu-inset border transition-all ${accentStyles[accentColor] || accentStyles.brand}`}>
-            <Icon className="w-5 h-5" />
+          <div className={`p-2 sm:p-2.5 rounded-xl neu-inset border transition-all shrink-0 ${accentStyles[accentColor] || accentStyles.brand}`}>
+            <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
         )}
       </div>

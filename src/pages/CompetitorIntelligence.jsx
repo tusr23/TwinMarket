@@ -85,26 +85,26 @@ export default function CompetitorIntelligence() {
   ];
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Header Banner */}
-      <div className="glass-card rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-slate-800">
+      <div className="glass-card rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6 border-slate-800">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-brand-400 mb-2">
             <Users className="w-4 h-4" />
             <span>Market Positioning & Multi-Agent Game Theory</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
             AI Competitor Intelligence
           </h2>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
             Monitor 4 active rival storefronts. When you modify pricing, promotions, or catalog width, competitors adapt dynamically using game-theoretic retail behavior.
           </p>
         </div>
 
-        <div className="p-3.5 rounded-2xl neu-inset flex items-center gap-4">
+        <div className="p-3 sm:p-3.5 rounded-2xl neu-inset flex items-center gap-3 sm:gap-4 shrink-0">
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-400 block">Market Threat Level</span>
-            <span className={`text-sm font-extrabold ${
+            <span className={`text-xs sm:text-sm font-extrabold ${
               competitorAnalysis.threatLevel.includes('Severe') ? 'text-rose-400' :
               competitorAnalysis.threatLevel.includes('Elevated') ? 'text-amber-400' : 'text-emerald-400'
             }`}>
@@ -114,13 +114,13 @@ export default function CompetitorIntelligence() {
           <div className="w-px h-8 bg-slate-800" />
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-400 block">Your Share</span>
-            <span className="text-sm font-extrabold text-brand-400">{competitorAnalysis.userMarketShare}%</span>
+            <span className="text-xs sm:text-sm font-extrabold text-brand-400">{competitorAnalysis.userMarketShare}%</span>
           </div>
         </div>
       </div>
 
       {/* Interactive Rival Stress-Tester Card */}
-      <div className="glass-card rounded-2xl p-6 border-cyan-500/30">
+      <div className="glass-card rounded-2xl p-4 sm:p-6 border-cyan-500/30">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h3 className="text-base font-bold text-white flex items-center gap-2">
@@ -155,13 +155,13 @@ export default function CompetitorIntelligence() {
       </div>
 
       {/* Competitors Table */}
-      <div className="glass-card rounded-2xl p-6">
+      <div className="glass-card rounded-2xl p-4 sm:p-6">
         <h3 className="text-base font-bold text-white mb-4">
           Rival Enterprise Matrix
         </h3>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+        <div className="overflow-x-auto -mx-2 sm:mx-0">
+          <table className="w-full text-left border-collapse min-w-[650px]">
             <thead>
               <tr className="border-b border-slate-800 text-[11px] font-bold uppercase tracking-wider text-slate-400">
                 <th className="py-3 px-4">Competitor Name</th>

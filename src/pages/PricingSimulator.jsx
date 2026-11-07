@@ -128,29 +128,29 @@ export default function PricingSimulator() {
   ];
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Top Header */}
-      <div className="glass-card rounded-3xl p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="glass-card rounded-3xl p-5 sm:p-6 lg:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-brand-400 mb-2">
             <TrendingUp className="w-4 h-4" />
             <span>AI Price Elasticity & Margin Laboratory</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white tracking-tight">
             AI Product Pricing Simulator
           </h2>
-          <p className="text-slate-400 text-sm mt-1 max-w-2xl leading-relaxed">
+          <p className="text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
             Test pricing hypotheses in real-time. Our microeconomic simulation calculates expected demand shifts, cross-competitor poaching, and unit gross margins.
           </p>
         </div>
 
         {/* Product Selector Dropdown */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-          <label className="text-xs font-semibold text-slate-300">Select Product:</label>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
+          <label className="text-xs font-semibold text-slate-300 shrink-0">Select Product:</label>
           <select
             value={selectedProductId}
             onChange={(e) => handleSelectProduct(e.target.value)}
-            className="bg-slate-900 border border-slate-700 text-white text-xs rounded-xl px-4 py-2.5 font-medium focus:ring-1 focus:ring-brand-500 focus:outline-none cursor-pointer"
+            className="bg-slate-900 border border-slate-700 text-white text-xs rounded-xl px-4 py-2.5 font-medium focus:ring-1 focus:ring-brand-500 focus:outline-none cursor-pointer w-full sm:w-auto"
           >
             {products.map((p) => (
               <option key={p.id} value={p.id}>
@@ -164,7 +164,7 @@ export default function PricingSimulator() {
       {/* Main Simulator Interactive Workspace */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Interactive Sliders & Controls (5 cols) */}
-        <div className="lg:col-span-5 glass-card rounded-2xl p-6 space-y-6">
+        <div className="lg:col-span-5 glass-card rounded-2xl p-4 sm:p-6 space-y-6">
           <div className="flex items-center justify-between pb-3 border-b border-slate-800">
             <h3 className="text-base font-bold text-white flex items-center gap-2">
               <Sliders className="w-4 h-4 text-cyanAccent-400" />

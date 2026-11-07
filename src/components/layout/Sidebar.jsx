@@ -17,7 +17,8 @@ import {
   Sliders,
   ChevronRight,
   Zap,
-  BookOpen
+  BookOpen,
+  X
 } from 'lucide-react';
 import { useBusiness } from '../../context/BusinessContext.jsx';
 
@@ -56,14 +57,14 @@ export default function Sidebar({ isOpen, onClose }) {
       )}
 
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-50 w-72 bg-[var(--bg-base)]/95 backdrop-blur-2xl border-r border-[var(--border-subtle)] flex flex-col transition-all duration-300 ease-in-out lg:translate-x-0 ${
+        className={`fixed top-0 bottom-0 left-0 z-50 w-72 max-w-[85vw] bg-[var(--bg-base)]/95 backdrop-blur-2xl border-r border-[var(--border-subtle)] flex flex-col transition-all duration-300 ease-in-out lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Logo and Brand Header */}
-        <div className="p-5 border-b border-[var(--border-subtle)] flex items-center justify-between">
+        <div className="p-4 sm:p-5 border-b border-[var(--border-subtle)] flex items-center justify-between">
           <NavLink to="/" className="flex items-center gap-3 group" onClick={onClose}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8F9DCC] to-[#4D5A8F] p-0.5 shadow-md shadow-[#4D5A8F]/30 group-hover:shadow-[#8F9DCC]/40 transition-all flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8F9DCC] to-[#4D5A8F] p-0.5 shadow-md shadow-[#4D5A8F]/30 group-hover:shadow-[#8F9DCC]/40 transition-all flex items-center justify-center shrink-0">
               <Sparkles className="w-5 h-5 text-[#F5F8FF]" />
             </div>
             <div>
@@ -74,6 +75,15 @@ export default function Sidebar({ isOpen, onClose }) {
               <p className="text-[11px] text-slate-400 font-medium">Virtual Market Intelligence</p>
             </div>
           </NavLink>
+
+          {/* Explicit mobile close button */}
+          <button
+            onClick={onClose}
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 lg:hidden cursor-pointer shrink-0"
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5" />
+          </button>
         </div>
 
         {/* Active Business Quick Widget */}

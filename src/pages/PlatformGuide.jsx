@@ -306,35 +306,35 @@ export default function PlatformGuide() {
   }
 
   return (
-    <div className="space-y-8 animate-fade-in pb-12">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
       {/* Hero Header Banner */}
-      <div className="relative overflow-hidden rounded-3xl neu-card border border-[var(--neu-border)] p-6 lg:p-10">
+      <div className="relative overflow-hidden rounded-3xl neu-card border border-[var(--neu-border)] p-5 sm:p-6 lg:p-10">
         <div className="absolute right-0 top-0 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/15 border border-brand-500/30 text-brand-300 text-xs font-semibold mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/15 border border-brand-500/30 text-brand-300 text-xs font-semibold mb-2.5 sm:mb-3">
               <BookOpen className="w-3.5 h-3.5 text-brand-400" />
               Platform Knowledge Base & System Documentation
             </div>
-            <h1 className="text-2xl lg:text-4xl font-extrabold text-white tracking-tight">
+            <h1 className="text-xl sm:text-2xl lg:text-4xl font-extrabold text-white tracking-tight">
               How to Use TwinMarket AI
             </h1>
-            <p className="text-slate-400 text-sm mt-2 max-w-3xl leading-relaxed">
+            <p className="text-slate-400 text-xs sm:text-sm mt-2 max-w-3xl leading-relaxed">
               Welcome to the official user manual, architectural overview, and mathematical reference for <strong className="text-white">TwinMarket AI</strong>. Learn how to simulate pricing experiments, compete with AI rivals, manage inventory buffers, and extract strategic market intelligence.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
             <NavLink
               to="/pricing-simulator"
-              className="neu-btn-primary px-4 py-2.5 rounded-xl font-bold text-xs text-white shadow-lg flex items-center gap-2 transition-all cursor-pointer"
+              className="neu-btn-primary px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs text-white shadow-lg flex items-center justify-center gap-2 transition-all cursor-pointer flex-1 sm:flex-initial"
             >
               <TrendingUp className="w-4 h-4" />
               Launch Pricing Lab
             </NavLink>
             <NavLink
               to="/advisor"
-              className="neu-btn px-4 py-2.5 rounded-xl font-bold text-xs text-slate-200 flex items-center gap-2 transition-all cursor-pointer"
+              className="neu-btn px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs text-slate-200 flex items-center justify-center gap-2 transition-all cursor-pointer flex-1 sm:flex-initial"
             >
               <Bot className="w-4 h-4 text-cyanAccent-400" />
               Ask AI Advisor
@@ -342,8 +342,8 @@ export default function PlatformGuide() {
           </div>
         </div>
 
-        {/* Tab Navigation Ribbon */}
-        <div className="flex flex-wrap items-center gap-2 mt-8 pt-6 border-t border-[var(--border-subtle)]">
+        {/* Tab Navigation Ribbon with smooth horizontal swipe on mobile */}
+        <div className="flex items-center gap-2 mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-[var(--border-subtle)] overflow-x-auto pb-2 -mx-2 sm:mx-0 px-2 sm:px-0">
           {[
             { id: 'walkthrough', label: 'Interactive Walkthrough', icon: Sparkles, count: '10 Steps' },
             { id: 'engine', label: 'Microeconomic Engine & Formulas', icon: Scale, count: '6 Models' },

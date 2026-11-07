@@ -47,17 +47,26 @@ export default function Header({ onMenuToggle }) {
 
   return (
     <>
-      <header className="sticky top-0 z-30 bg-[var(--bg-base)]/90 backdrop-blur-xl border-b border-[var(--border-subtle)] px-4 lg:px-8 py-3.5 transition-colors duration-300">
-        <div className="flex items-center justify-between gap-4">
+      <header className="sticky top-0 z-30 bg-[var(--bg-base)]/90 backdrop-blur-xl border-b border-[var(--border-subtle)] px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3.5 transition-colors duration-300">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           {/* Left: Mobile Toggle & Title */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <button
               onClick={onMenuToggle}
-              className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 lg:hidden"
+              className="p-1.5 sm:p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/80 lg:hidden shrink-0"
               aria-label="Open sidebar"
             >
               <Menu className="w-5 h-5" />
             </button>
+
+            {/* Compact Brand / Venture on mobile */}
+            <div className="sm:hidden min-w-0">
+              <span className="font-extrabold text-sm tracking-tight text-white truncate block max-w-[110px] xs:max-w-[150px]">
+                {business.name}
+              </span>
+            </div>
+
+            {/* Desktop & Tablet Header */}
             <div className="hidden sm:block">
               <div className="flex items-center gap-2">
                 <h1 className="font-bold text-white text-base lg:text-lg tracking-tight">
@@ -76,7 +85,7 @@ export default function Header({ onMenuToggle }) {
             </div>
           </div>
 
-          {/* Center / Metrics Strip (Hidden on small mobile) */}
+          {/* Center / Metrics Strip (Hidden on smaller screens) */}
           <div className="hidden xl:flex items-center gap-6 text-xs neu-inset px-5 py-2.5 rounded-xl border border-[var(--border-subtle)]">
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Revenue / Mo</span>
@@ -103,11 +112,11 @@ export default function Header({ onMenuToggle }) {
           </div>
 
           {/* Right: Actions */}
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
             {/* Барвинок Twilight Dark / Porcelain Light Mode Switcher */}
             <button
               onClick={() => setTheme(theme === 'barvinok-light' ? 'barvinok-dark' : 'barvinok-light')}
-              className="neu-btn px-2.5 py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer"
+              className="neu-btn p-2 sm:px-2.5 sm:py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer"
               title="Toggle Барвинок Twilight Dark / Porcelain Light mode"
             >
               {theme === 'barvinok-light' ? (
@@ -127,7 +136,7 @@ export default function Header({ onMenuToggle }) {
             <select
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
-              className="bg-[var(--bg-card)] border border-[var(--border-card)] text-slate-300 text-xs rounded-lg px-2.5 py-2 font-mono font-medium focus:ring-1 focus:ring-white/40 focus:outline-none cursor-pointer transition-colors"
+              className="bg-[var(--bg-card)] border border-[var(--border-card)] text-slate-300 text-xs rounded-lg px-1.5 sm:px-2.5 py-1.5 sm:py-2 font-mono font-medium focus:ring-1 focus:ring-white/40 focus:outline-none cursor-pointer transition-colors"
             >
               <option value="INR">₹ INR</option>
               <option value="USD">$ USD</option>
@@ -139,20 +148,22 @@ export default function Header({ onMenuToggle }) {
             <button
               onClick={handleSimulateClick}
               disabled={isRunningSim}
-              className="relative inline-flex items-center gap-2 px-3.5 py-2 rounded-lg font-bold text-xs neu-btn-primary hover:opacity-95 shadow-lg active:scale-95 transition-all disabled:opacity-60 cursor-pointer"
+              className="relative inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg font-bold text-xs neu-btn-primary hover:opacity-95 shadow-lg active:scale-95 transition-all disabled:opacity-60 cursor-pointer"
               title="Recalculate customer demand, competitor moves, and market balance"
             >
-              <Play className={`w-3.5 h-3.5 fill-current ${isRunningSim ? 'animate-spin' : ''}`} />
+              <Play className={`w-3 h-3 sm:w-3.5 sm:h-3.5 fill-current ${isRunningSim ? 'animate-spin' : ''}`} />
               <span className="hidden sm:inline">
                 {isRunningSim ? 'Simulating...' : 'RUN SIMULATION'}
               </span>
-              <span className="sm:hidden">Run Sim</span>
+              <span className="sm:hidden font-mono text-[11px]">
+                {isRunningSim ? '...' : 'Run'}
+              </span>
             </button>
 
-            {/* Guide & How to Use Quicklink */}
+            {/* Guide & How to Use Quicklink (Visible on tablet and desktop) */}
             <NavLink
               to="/guide"
-              className="relative px-3 py-2 rounded-xl neu-btn text-slate-300 hover:text-white transition-all cursor-pointer flex items-center gap-1.5"
+              className="hidden md:flex relative px-3 py-2 rounded-xl neu-btn text-slate-300 hover:text-white transition-all cursor-pointer items-center gap-1.5"
               title="Platform Guide & How to Use"
             >
               <BookOpen className="w-4 h-4 text-white" />
@@ -162,7 +173,7 @@ export default function Header({ onMenuToggle }) {
             {/* Activity Log / Notifications */}
             <button
               onClick={() => setShowActivityModal(true)}
-              className="relative p-2.5 rounded-xl neu-btn text-slate-300 hover:text-white transition-all cursor-pointer"
+              className="relative p-2 sm:p-2.5 rounded-xl neu-btn text-slate-300 hover:text-white transition-all cursor-pointer"
               aria-label="View recent activities"
             >
               <Bell className="w-4 h-4" />
