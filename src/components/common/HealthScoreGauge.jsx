@@ -18,8 +18,8 @@ export default function HealthScoreGauge({
   const strokeDashoffset = circumference - (score / 100) * circumference;
 
   const getScoreTier = (val) => {
-    if (val >= 85) return { label: 'Optimal Health', color: 'text-[#F5F8FF]', stroke: '#8F9DCC', bg: 'bg-[#8F9DCC]/20' };
-    if (val >= 70) return { label: 'Strong Performance', color: 'text-[#CED8F2]', stroke: '#6D7CB0', bg: 'bg-[#6D7CB0]/20' };
+    if (val >= 85) return { label: 'Optimal Health', color: 'text-white', stroke: '#4CC8A3', bg: 'bg-[#4CC8A3]/20' };
+    if (val >= 70) return { label: 'Strong Performance', color: 'text-[#B0F2BC]', stroke: '#2C98A0', bg: 'bg-[#2C98A0]/30' };
     if (val >= 50) return { label: 'Moderate Risk', color: 'text-amber-400', stroke: '#F59E0B', bg: 'bg-amber-500/15' };
     return { label: 'Critical Distress', color: 'text-rose-400', stroke: '#F43F5E', bg: 'bg-rose-500/15' };
   };
@@ -31,7 +31,7 @@ export default function HealthScoreGauge({
       <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
         <div>
           <h4 className="text-sm font-bold flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#8F9DCC]" />
+            <ShieldCheck className="w-4 h-4 text-[#4CC8A3]" />
             Enterprise Health Score
           </h4>
           <p className="text-xs text-slate-400 mt-0.5">Composite algorithmic evaluation</p>
@@ -51,7 +51,7 @@ export default function HealthScoreGauge({
                 cx="80"
                 cy="80"
                 r={radius}
-                stroke="#273054"
+                stroke="#153B3E"
                 strokeWidth="12"
                 fill="transparent"
               />
@@ -97,7 +97,7 @@ export default function HealthScoreGauge({
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-[#8F9DCC] rounded-full transition-all duration-700"
+                className="h-full bg-[#4CC8A3] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.profitability}%` }}
               />
             </div>
@@ -110,7 +110,7 @@ export default function HealthScoreGauge({
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-[#6D7CB0] rounded-full transition-all duration-700"
+                className="h-full bg-[#38B2A3] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.demandTraction}%` }}
               />
             </div>
@@ -123,7 +123,7 @@ export default function HealthScoreGauge({
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-[#CED8F2] rounded-full transition-all duration-700"
+                className="h-full bg-[#67DBA5] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.marketShare}%` }}
               />
             </div>
@@ -136,7 +136,7 @@ export default function HealthScoreGauge({
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-[#4D5A8F] rounded-full transition-all duration-700"
+                className="h-full bg-[#2C98A0] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.inventoryHealth}%` }}
               />
             </div>
@@ -149,7 +149,7 @@ export default function HealthScoreGauge({
             </div>
             <div className="h-2 w-full neu-inset rounded-full overflow-hidden p-[1px]">
               <div
-                className="h-full bg-[#B3C0E6] rounded-full transition-all duration-700"
+                className="h-full bg-[#B0F2BC] rounded-full transition-all duration-700"
                 style={{ width: `${subscores.financialStability}%` }}
               />
             </div>

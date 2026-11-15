@@ -58,7 +58,7 @@ export default function CustomerDemand() {
     triggerSimulationRun(`Updated marketing budget to ${formatCurrency(marketingBudget)}`);
   };
 
-  const segmentColors = ['#8F9DCC', '#6D7CB0', '#B3C0E6', '#CED8F2', '#4D5A8F'];
+  const segmentColors = ['#4CC8A3', '#2C98A0', '#67DBA5', '#89E8AC', '#38B2A3'];
 
   return (
     <div className="space-y-6 sm:space-y-8 animate-fade-in pb-12">
@@ -164,17 +164,17 @@ export default function CustomerDemand() {
               <AreaChart data={demand.forwardProjection} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
                 <defs>
                   <linearGradient id="demandArea" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#8F9DCC" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#6D7CB0" stopOpacity={0.0} />
+                    <stop offset="5%" stopColor="#4CC8A3" stopOpacity={0.4} />
+                    <stop offset="95%" stopColor="#2C98A0" stopOpacity={0.0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
-                <XAxis dataKey="month" stroke="#8F9DCC" fontSize={11} tickLine={false} />
-                <YAxis stroke="#8F9DCC" fontSize={11} tickLine={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#24656B40" vertical={false} />
+                <XAxis dataKey="month" stroke="#B0F2BC" fontSize={11} tickLine={false} />
+                <YAxis stroke="#B0F2BC" fontSize={11} tickLine={false} />
                 <Tooltip
                   contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
                 />
-                <Area type="monotone" dataKey="projectedUnits" name="Projected Demand (Units)" stroke="#8F9DCC" strokeWidth={2.5} fill="url(#demandArea)" />
+                <Area type="monotone" dataKey="projectedUnits" name="Projected Demand (Units)" stroke="#4CC8A3" strokeWidth={2.5} fill="url(#demandArea)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>

@@ -53,7 +53,7 @@ export default function Dashboard() {
   const marketShareData = [
     { name: business.name, value: competitorAnalysis.userMarketShare, color: activeTheme.primaryColor },
     ...competitorAnalysis.competitors.map((c, i) => {
-      const colors = [activeTheme.secondaryColor, '#CED8F2', '#B3C0E6', '#4D5A8F', '#273054'];
+      const colors = [activeTheme.secondaryColor, '#4CC8A3', '#67DBA5', '#89E8AC', '#B0F2BC', '#38B2A3'];
       return {
         name: c.name,
         value: c.marketShare,
@@ -263,10 +263,10 @@ export default function Dashboard() {
                     <stop offset="95%" stopColor={activeTheme.secondaryColor} stopOpacity={0.0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
-                <XAxis dataKey="month" stroke="#8F9DCC" fontSize={11} tickLine={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#24656B40" vertical={false} />
+                <XAxis dataKey="month" stroke="#B0F2BC" fontSize={11} tickLine={false} />
                 <YAxis
-                  stroke="#8F9DCC"
+                  stroke="#B0F2BC"
                   fontSize={11}
                   tickLine={false}
                   tickFormatter={(val) => `₹${(val / 1000).toFixed(0)}k`}
@@ -300,7 +300,7 @@ export default function Dashboard() {
               <h3 className="text-base font-bold text-white">Customer Demand vs Fulfillment Capacity</h3>
               <p className="text-xs text-slate-400 mt-0.5">Estimated buyer volume vs available stock units per SKU</p>
             </div>
-            <NavLink to="/customer-demand" className="text-xs text-[#8F9DCC] font-semibold hover:underline">
+            <NavLink to="/customer-demand" className="text-xs text-[#4CC8A3] font-semibold hover:underline">
               Demand Deep Dive
             </NavLink>
           </div>
@@ -308,15 +308,15 @@ export default function Dashboard() {
           <div className="h-72 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={demand.productDemands} margin={{ top: 10, right: 10, left: -10, bottom: 25 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
-                <XAxis dataKey="name" stroke="#8F9DCC" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" />
-                <YAxis stroke="#8F9DCC" fontSize={11} tickLine={false} />
+                <CartesianGrid strokeDasharray="3 3" stroke="#24656B40" vertical={false} />
+                <XAxis dataKey="name" stroke="#B0F2BC" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" />
+                <YAxis stroke="#B0F2BC" fontSize={11} tickLine={false} />
                 <Tooltip
                   contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
                 />
                 <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-                <Bar dataKey="predictedUnits" name="Customer Demand (Units)" fill="#8F9DCC" radius={[6, 6, 0, 0]} />
-                <Bar dataKey="stock" name="Stock Available (Units)" fill="#6D7CB0" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="predictedUnits" name="Customer Demand (Units)" fill="#4CC8A3" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="stock" name="Stock Available (Units)" fill="#2C98A0" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -329,7 +329,7 @@ export default function Dashboard() {
               <h3 className="text-base font-bold text-white">Market Share Breakdown</h3>
               <p className="text-xs text-slate-400 mt-0.5">Competitive market equilibrium (100% pool)</p>
             </div>
-            <NavLink to="/competitors" className="text-xs text-[#8F9DCC] font-semibold hover:underline">
+            <NavLink to="/competitors" className="text-xs text-[#4CC8A3] font-semibold hover:underline">
               Competitor Radar
             </NavLink>
           </div>

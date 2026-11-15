@@ -91,42 +91,42 @@ export default function Header({ onMenuToggle }) {
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Revenue / Mo</span>
               <span className="font-bold text-xs">{formatCurrency(financials.totalRevenue)}</span>
             </div>
-            <div className="w-px h-6 bg-[#4D5A8F] shadow-sm" />
+            <div className="w-px h-6 bg-[#24656B] shadow-sm" />
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Net Profit</span>
-              <span className="font-bold text-xs text-[#CED8F2]">
+              <span className="font-bold text-xs text-[#B0F2BC]">
                 {formatCurrency(financials.netProfit)}
                 <span className="text-[10px] ml-1 opacity-80">({financials.netProfitMargin}%)</span>
               </span>
             </div>
-            <div className="w-px h-6 bg-[#4D5A8F] shadow-sm" />
+            <div className="w-px h-6 bg-[#24656B] shadow-sm" />
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Liquid Cash</span>
-              <span className="font-bold text-[#F5F8FF] text-xs">{formatCurrency(business.currentCash)}</span>
+              <span className="font-bold text-white text-xs">{formatCurrency(business.currentCash)}</span>
             </div>
-            <div className="w-px h-6 bg-[#4D5A8F] shadow-sm" />
+            <div className="w-px h-6 bg-[#24656B] shadow-sm" />
             <div>
               <span className="text-slate-400 block text-[10px] uppercase font-semibold tracking-wider">Health Score</span>
-              <span className="font-bold text-[#8F9DCC] text-xs">{healthScore}/100</span>
+              <span className="font-bold text-[#4CC8A3] text-xs">{healthScore}/100</span>
             </div>
           </div>
 
           {/* Right: Actions */}
           <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-            {/* Барвинок Twilight Dark / Porcelain Light Mode Switcher */}
+            {/* Dark / Light Mode Switcher */}
             <button
-              onClick={() => setTheme(theme === 'barvinok-light' ? 'barvinok-dark' : 'barvinok-light')}
+              onClick={() => setTheme(theme === 'uxintace-light' || theme === 'parchment-light' ? 'uxintace-dark' : 'uxintace-light')}
               className="neu-btn p-2 sm:px-2.5 sm:py-2 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-all cursor-pointer"
-              title="Toggle Барвинок Twilight Dark / Porcelain Light mode"
+              title="Toggle Uxintace Mint Dark / Seafoam Light mode"
             >
-              {theme === 'barvinok-light' ? (
+              {theme === 'uxintace-light' || theme === 'parchment-light' ? (
                 <>
-                  <Moon className="w-3.5 h-3.5 text-[#4D5A8F]" />
+                  <Moon className="w-3.5 h-3.5 text-[#2C98A0]" />
                   <span className="hidden sm:inline font-mono text-[11px]">Dark</span>
                 </>
               ) : (
                 <>
-                  <Sun className="w-3.5 h-3.5 text-[#CED8F2]" />
+                  <Sun className="w-3.5 h-3.5 text-[#B0F2BC]" />
                   <span className="hidden sm:inline font-mono text-[11px]">Light</span>
                 </>
               )}

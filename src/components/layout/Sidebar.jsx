@@ -64,13 +64,13 @@ export default function Sidebar({ isOpen, onClose }) {
         {/* Logo and Brand Header */}
         <div className="p-4 sm:p-5 border-b border-[var(--border-subtle)] flex items-center justify-between">
           <NavLink to="/" className="flex items-center gap-3 group" onClick={onClose}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8F9DCC] to-[#4D5A8F] p-0.5 shadow-md shadow-[#4D5A8F]/30 group-hover:shadow-[#8F9DCC]/40 transition-all flex items-center justify-center shrink-0">
-              <Sparkles className="w-5 h-5 text-[#F5F8FF]" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#4CC8A3] to-[#2C98A0] p-0.5 shadow-md shadow-[#2C98A0]/30 group-hover:shadow-[#4CC8A3]/50 transition-all flex items-center justify-center shrink-0">
+              <Sparkles className="w-5 h-5 text-[#0B2224]" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-lg tracking-tight">TwinMarket</span>
-                <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-[#E3EAFA] text-[#4D5A8F] border border-[#B3C0E6]">AI</span>
+                <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-[#B0F2BC] text-[#0B2224] border border-[#89E8AC]">AI</span>
               </div>
               <p className="text-[11px] text-slate-400 font-medium">Virtual Market Intelligence</p>
             </div>
@@ -95,7 +95,7 @@ export default function Sidebar({ isOpen, onClose }) {
           </div>
           <div className="text-right">
             <span className="text-[10px] text-slate-400 block">Health</span>
-            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#4D5A8F]/30 text-[#CED8F2] border border-[#6D7CB0]/40">
+            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#153B3E] text-[#B0F2BC] border border-[#2C98A0]/40">
               {healthScore}%
             </span>
           </div>
@@ -117,8 +117,8 @@ export default function Sidebar({ isOpen, onClose }) {
                     className={({ isActive }) =>
                       `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                         isActive
-                          ? 'bg-gradient-to-r from-[#8F9DCC] to-[#4D5A8F] text-[#F5F8FF] shadow-lg shadow-[#4D5A8F]/25 font-bold active-nav-pill'
-                          : 'text-slate-300 hover:text-[#F5F8FF] hover:bg-white/5'
+                          ? 'bg-gradient-to-r from-[#4CC8A3] to-[#2C98A0] text-[#0B2224] shadow-lg shadow-[#4CC8A3]/25 font-bold active-nav-pill'
+                          : 'text-slate-300 hover:text-white hover:bg-white/5'
                       }`
                     }
                   >
@@ -127,7 +127,7 @@ export default function Sidebar({ isOpen, onClose }) {
                       <span>{item.label}</span>
                     </div>
                     {item.highlight && (
-                      <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#E3EAFA] text-[#4D5A8F] border border-[#B3C0E6] uppercase tracking-wider">
+                      <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#B0F2BC] text-[#0B2224] border border-[#89E8AC] uppercase tracking-wider">
                         AI
                       </span>
                     )}
@@ -151,8 +151,8 @@ export default function Sidebar({ isOpen, onClose }) {
                     className={({ isActive }) =>
                       `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                         isActive
-                          ? 'bg-gradient-to-r from-[#6D7CB0] to-[#8F9DCC] text-[#F5F8FF] shadow-lg shadow-[#6D7CB0]/25 font-bold active-nav-pill'
-                          : 'text-slate-300 hover:text-[#F5F8FF] hover:bg-white/5'
+                          ? 'bg-gradient-to-r from-[#2C98A0] to-[#4CC8A3] text-[#0B2224] shadow-lg shadow-[#4CC8A3]/25 font-bold active-nav-pill'
+                          : 'text-slate-300 hover:text-white hover:bg-white/5'
                       }`
                     }
                   >
@@ -177,8 +177,8 @@ export default function Sidebar({ isOpen, onClose }) {
                 className={({ isActive }) =>
                   `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
                     isActive
-                      ? 'bg-gradient-to-r from-[#8F9DCC] to-[#4D5A8F] text-[#F5F8FF] shadow-lg shadow-[#4D5A8F]/25 font-bold active-nav-pill'
-                      : 'text-slate-300 hover:text-[#F5F8FF] hover:bg-white/5'
+                      ? 'bg-gradient-to-r from-[#4CC8A3] to-[#2C98A0] text-[#0B2224] shadow-lg shadow-[#4CC8A3]/25 font-bold active-nav-pill'
+                      : 'text-slate-300 hover:text-white hover:bg-white/5'
                   }`
                 }
               >
@@ -186,7 +186,7 @@ export default function Sidebar({ isOpen, onClose }) {
                   <BookOpen className="w-4 h-4 transition-colors" />
                   <span>How to Use & Details</span>
                 </div>
-                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#E3EAFA] text-[#4D5A8F] border border-[#B3C0E6] tracking-wider">
+                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#B0F2BC] text-[#0B2224] border border-[#89E8AC] tracking-wider">
                   GUIDE
                 </span>
               </NavLink>
@@ -198,7 +198,7 @@ export default function Sidebar({ isOpen, onClose }) {
         <div className="p-4 border-t border-[var(--border-subtle)] bg-[var(--bg-deep)]/60">
           <div className="flex items-center justify-between text-xs text-slate-400">
             <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#8F9DCC] animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#4CC8A3] animate-pulse"></span>
               Client Simulation Engine
             </span>
             <span className="font-mono text-[10px]">v1.0-prod</span>

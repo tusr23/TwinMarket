@@ -189,14 +189,14 @@ export default function InventoryManagement() {
         <div className="h-64 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData} margin={{ top: 10, right: 10, left: -10, bottom: 25 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
-              <XAxis dataKey="name" stroke="#8F9DCC" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" />
-              <YAxis stroke="#8F9DCC" fontSize={11} tickLine={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#24656B40" vertical={false} />
+              <XAxis dataKey="name" stroke="#B0F2BC" fontSize={10} tickLine={false} interval={0} angle={-15} textAnchor="end" />
+              <YAxis stroke="#B0F2BC" fontSize={11} tickLine={false} />
               <Tooltip contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }} />
               <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-              <Bar dataKey="CurrentStock" name="Current Stock" fill="#8F9DCC" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="SafetyBuffer" name="Min Safety Buffer" fill="#F5F8FF" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="PredictedDemand" name="Predicted Demand" fill="#6D7CB0" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="CurrentStock" name="Current Stock" fill="#4CC8A3" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="SafetyBuffer" name="Min Safety Buffer" fill="#B0F2BC" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="PredictedDemand" name="Predicted Demand" fill="#2C98A0" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

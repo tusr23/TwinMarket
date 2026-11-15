@@ -64,9 +64,9 @@ export default function CompetitorIntelligence() {
 
   // Pie chart data
   const pieData = [
-    { name: business.name, value: competitorAnalysis.userMarketShare, color: '#8F9DCC' },
+    { name: business.name, value: competitorAnalysis.userMarketShare, color: '#4CC8A3' },
     ...competitors.map((c, i) => {
-      const colors = ['#6D7CB0', '#B3C0E6', '#CED8F2', '#4D5A8F'];
+      const colors = ['#2C98A0', '#67DBA5', '#89E8AC', '#38B2A3', '#B0F2BC'];
       return {
         name: c.name,
         value: c.marketShare,
@@ -268,11 +268,11 @@ export default function CompetitorIntelligence() {
           <div className="h-64 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart cx="50%" cy="50%" outerRadius="75%" data={radarData}>
-                <PolarGrid stroke="#4D5A8F40" />
-                <PolarAngleAxis dataKey="subject" stroke="#CED8F2" fontSize={11} />
-                <PolarRadiusAxis stroke="#6D7CB0" angle={30} domain={[0, 100]} />
-                <Radar name="Your Store" dataKey="User" stroke="#8F9DCC" fill="#8F9DCC" fillOpacity={0.4} />
-                <Radar name="Market Average" dataKey="MarketAvg" stroke="#6D7CB0" fill="#6D7CB0" fillOpacity={0.25} />
+                <PolarGrid stroke="#24656B40" />
+                <PolarAngleAxis dataKey="subject" stroke="#B0F2BC" fontSize={11} />
+                <PolarRadiusAxis stroke="#38B2A3" angle={30} domain={[0, 100]} />
+                <Radar name="Your Store" dataKey="User" stroke="#4CC8A3" fill="#4CC8A3" fillOpacity={0.4} />
+                <Radar name="Market Average" dataKey="MarketAvg" stroke="#2C98A0" fill="#2C98A0" fillOpacity={0.35} />
                 <Legend wrapperStyle={{ fontSize: '12px' }} />
                 <Tooltip contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }} />
               </RadarChart>

@@ -14,9 +14,9 @@ export function BusinessProvider({ children }) {
   const [currency, setCurrency] = useState('INR'); // 'INR', 'USD', 'EUR', 'GBP'
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('twinmarket_ai_theme');
-    if (saved === 'barvinok-light') return 'barvinok-light';
+    if (saved === 'uxintace-light' || saved === 'parchment-light' || saved === 'emerald-light' || saved === 'barvinok-light') return 'uxintace-light';
     if (saved === 'monochrome-black') return 'monochrome-black';
-    return 'barvinok-dark';
+    return 'uxintace-dark';
   });
   const [toast, setToast] = useState(null);
   const [simulationTick, setSimulationTick] = useState(0);

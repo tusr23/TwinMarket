@@ -31,7 +31,7 @@ export default function MobileBottomNav({ onMenuToggle }) {
             className={({ isActive }) =>
               `flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all relative ${
                 isActive
-                  ? 'text-[#8F9DCC] font-bold'
+                  ? 'text-[#4CC8A3] font-bold'
                   : 'text-slate-400 hover:text-slate-200'
               }`
             }
@@ -39,9 +39,9 @@ export default function MobileBottomNav({ onMenuToggle }) {
             {({ isActive }) => (
               <>
                 <div className="relative">
-                  <Icon className={`w-5 h-5 transition-transform ${isActive ? 'scale-110 text-[#8F9DCC]' : ''}`} />
+                  <Icon className={`w-5 h-5 transition-transform ${isActive ? 'scale-110 text-[#4CC8A3]' : ''}`} />
                   {tab.isAi && (
-                    <span className="absolute -top-1 -right-2 text-[8px] font-extrabold px-1 py-0.5 rounded-full bg-[#E3EAFA] text-[#4D5A8F] leading-none">
+                    <span className="absolute -top-1 -right-2 text-[8px] font-extrabold px-1 py-0.5 rounded-full bg-[#B0F2BC] text-[#0B2224] leading-none">
                       AI
                     </span>
                   )}
@@ -50,7 +50,7 @@ export default function MobileBottomNav({ onMenuToggle }) {
                   {tab.label}
                 </span>
                 {isActive && (
-                  <span className="w-1 h-1 rounded-full bg-[#8F9DCC] absolute bottom-0.5" />
+                  <span className="w-1 h-1 rounded-full bg-[#4CC8A3] absolute bottom-0.5" />
                 )}
               </>
             )}

@@ -602,7 +602,7 @@ export default function PlatformGuide() {
                     <td className="py-3.5 px-4 text-emerald-400">Forecast units, segment volume, seasonal indices</td>
                   </tr>
                   <tr className="hover:bg-slate-900/50">
-                    <td className="py-3.5 px-4 font-mono font-bold text-indigo-300">competitorEngine.js</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-[#4CC8A3]">competitorEngine.js</td>
                     <td className="py-3.5 px-4 text-slate-300">Game-theoretic reaction models, predatory discounting, share shifts</td>
                     <td className="py-3.5 px-4 text-slate-400">Competitor Intelligence, Dashboard</td>
                     <td className="py-3.5 px-4 text-emerald-400">Rival reaction ledger, normalized market shares</td>
@@ -626,7 +626,7 @@ export default function PlatformGuide() {
                     <td className="py-3.5 px-4 text-emerald-400">Health Score (0-100), composite risk index</td>
                   </tr>
                   <tr className="hover:bg-slate-900/50">
-                    <td className="py-3.5 px-4 font-mono font-bold text-purple-300">advisorEngine.js</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-[#B0F2BC]">advisorEngine.js</td>
                     <td className="py-3.5 px-4 text-slate-300">Heuristic introspection on live figures, margin & competitor parsing</td>
                     <td className="py-3.5 px-4 text-slate-400">AI Business Advisor, Dashboard</td>
                     <td className="py-3.5 px-4 text-emerald-400">Contextual answers, actionable guidance buttons</td>

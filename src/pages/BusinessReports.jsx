@@ -146,7 +146,7 @@ export default function BusinessReports() {
         {/* Section 3: Competitor Parity & Market Share */}
         <div className="space-y-4">
           <h3 className="text-lg font-bold text-white print:text-slate-900 flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-indigo-400 print:bg-slate-700" />
+            <span className="w-2 h-2 rounded-full bg-[#4CC8A3] print:bg-slate-700" />
             3. Competitor Market Share & Intelligence
           </h3>
 

@@ -370,9 +370,9 @@ export default function PricingSimulator() {
             <div className="h-60 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={comparisonChartData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#27272A" vertical={false} />
-                  <XAxis dataKey="metric" stroke="#71717A" fontSize={11} tickLine={false} />
-                  <YAxis stroke="#71717A" fontSize={11} tickLine={false} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="#24656B40" vertical={false} />
+                  <XAxis dataKey="metric" stroke="#B0F2BC" fontSize={11} tickLine={false} />
+                  <YAxis stroke="#B0F2BC" fontSize={11} tickLine={false} />
                   <Tooltip
                     contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
                   />
@@ -406,9 +406,9 @@ export default function PricingSimulator() {
         <div className="h-72 w-full mt-4">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={elasticityCurve} margin={{ top: 10, right: 20, left: 10, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#27272A" vertical={false} />
-              <XAxis dataKey="percentChange" stroke="#71717A" fontSize={11} tickLine={false} />
-              <YAxis yAxisId="left" stroke="#71717A" fontSize={11} tickLine={false} tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#24656B40" vertical={false} />
+              <XAxis dataKey="percentChange" stroke="#B0F2BC" fontSize={11} tickLine={false} />
+              <YAxis yAxisId="left" stroke="#B0F2BC" fontSize={11} tickLine={false} tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`} />
               <YAxis yAxisId="right" orientation="right" stroke={activeTheme.secondaryColor} fontSize={11} tickLine={false} />
               <Tooltip
                 contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }}
@@ -417,7 +417,7 @@ export default function PricingSimulator() {
               <Legend wrapperStyle={{ fontSize: '12px' }} />
               <Line yAxisId="left" type="monotone" dataKey="revenue" name="Expected Revenue" stroke={activeTheme.primaryColor} strokeWidth={2.5} dot={{ r: 3 }} />
               <Line yAxisId="left" type="monotone" dataKey="profit" name="Net Profit" stroke={activeTheme.secondaryColor} strokeWidth={2.5} dot={{ r: 3 }} />
-              <Line yAxisId="right" type="monotone" dataKey="demand" name="Demand (Units)" stroke="#71717A" strokeWidth={2} strokeDasharray="5 5" dot={{ r: 3 }} />
+              <Line yAxisId="right" type="monotone" dataKey="demand" name="Demand (Units)" stroke="#67DBA5" strokeWidth={2} strokeDasharray="5 5" dot={{ r: 3 }} />
             </LineChart>
           </ResponsiveContainer>
         </div>

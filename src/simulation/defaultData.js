@@ -300,30 +300,30 @@ export const DEMO_BUSINESS = {
 
 export const UI_THEMES = [
   {
-    id: 'barvinok-dark',
-    name: 'Барвинок Twilight Dark',
-    tag: 'Imported Palette',
-    style: 'Royal Periwinkle & Slate Indigo',
-    primaryColor: '#8F9DCC',
-    secondaryColor: '#6D7CB0',
-    accentColor: '#F5F8FF',
-    darkBg: '#181E36',
-    previewGradient: 'from-[#181E36] via-[#4D5A8F] to-[#CED8F2]',
-    dotBg: 'bg-[#8F9DCC]',
-    description: 'Imported from Holst "Барвинок" (Periwinkle): 7-shade palette from #4D5A8F royal periwinkle, #6D7CB0 iris, #8F9DCC sky lavender, #B3C0E6, #CED8F2, #E3EAFA, to #F5F8FF porcelain white.'
+    id: 'uxintace-dark',
+    name: 'Uxintace Mint & Ocean Teal',
+    tag: 'Uxintace Gradient Palette',
+    style: 'Ocean Abyss, Sea Teal, Mint & Pale Seafoam',
+    primaryColor: '#4CC8A3',
+    secondaryColor: '#2C98A0',
+    accentColor: '#B0F2BC',
+    darkBg: '#0B2224',
+    previewGradient: 'from-[#0B2224] via-[#2C98A0] to-[#4CC8A3]',
+    dotBg: 'bg-[#4CC8A3]',
+    description: 'Uxintace 6-Tone Mint & Teal Palette: #0B2224 oceanic abyss canvas, #2C98A0 deep teal, #38B2A3 sea green, #4CC8A3 mint teal, #67DBA5 vibrant mint, and #B0F2BC pale seafoam.'
   },
   {
-    id: 'barvinok-light',
-    name: 'Барвинок Porcelain Light',
-    tag: 'Porcelain Cloud Mode',
-    style: 'Whisper White & Royal Periwinkle',
-    primaryColor: '#4D5A8F',
-    secondaryColor: '#6D7CB0',
-    accentColor: '#181E36',
-    darkBg: '#F5F8FF',
-    previewGradient: 'from-[#F5F8FF] via-[#CED8F2] to-[#4D5A8F]',
-    dotBg: 'bg-[#4D5A8F]',
-    description: 'Luminous daylight aesthetic with #F5F8FF porcelain canvas, #4D5A8F royal periwinkle primary, and soft #CED8F2 borders.'
+    id: 'uxintace-light',
+    name: 'Mint Seafoam Light',
+    tag: 'Airy Pastel Light Mode',
+    style: 'Soft Pastel Mint, Ocean Teal & Aqua',
+    primaryColor: '#2C98A0',
+    secondaryColor: '#4CC8A3',
+    accentColor: '#0B2224',
+    darkBg: '#EAFBF1',
+    previewGradient: 'from-[#EAFBF1] via-[#B0F2BC] to-[#2C98A0]',
+    dotBg: 'bg-[#2C98A0]',
+    description: 'Airy daylight aesthetic with #EAFBF1 pale mint canvas, pure white cards, #0B2224 deep oceanic text, and #2C98A0 sea teal accents.'
   },
   {
     id: 'monochrome-black',

@@ -247,14 +247,14 @@ export default function StrategyComparison() {
         <div className="h-72 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={chartData} margin={{ top: 10, right: 10, left: 10, bottom: 0 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#4D5A8F40" vertical={false} />
-              <XAxis dataKey="timeline" stroke="#8F9DCC" fontSize={11} tickLine={false} />
-              <YAxis stroke="#8F9DCC" fontSize={11} tickLine={false} tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`} />
+              <CartesianGrid strokeDasharray="3 3" stroke="#24656B40" vertical={false} />
+              <XAxis dataKey="timeline" stroke="#B0F2BC" fontSize={11} tickLine={false} />
+              <YAxis stroke="#B0F2BC" fontSize={11} tickLine={false} tickFormatter={(v) => `₹${(v / 1000).toFixed(0)}k`} />
               <Tooltip contentStyle={{ backgroundColor: 'var(--bg-base)', borderColor: 'var(--border-subtle)', borderRadius: '12px', fontSize: '12px' }} formatter={(v) => [formatCurrency(v)]} />
               <Legend wrapperStyle={{ fontSize: '12px' }} />
-              <Bar dataKey="Aggressive Growth" fill="#8F9DCC" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="Balanced Strategy" fill="#6D7CB0" radius={[4, 4, 0, 0]} />
-              <Bar dataKey="Max Profit" fill="#F5F8FF" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="Aggressive Growth" fill="#4CC8A3" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="Balanced Strategy" fill="#2C98A0" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="Max Profit" fill="#B0F2BC" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

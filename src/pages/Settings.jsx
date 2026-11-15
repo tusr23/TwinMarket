@@ -94,14 +94,14 @@ export default function Settings() {
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-base font-bold flex items-center gap-2">
-              <Palette className="w-4 h-4 text-[#8F9DCC]" />
-              Holst "Барвинок" (Barvinok) Design System
+              <Palette className="w-4 h-4 text-[#4CC8A3]" />
+              Uxintace Mint & Ocean Teal Design System
             </h3>
             <p className="text-xs text-slate-400 mt-0.5">
-              Colors directly imported from Holst "Барвинок" (Online Education, Parenting & Stationery): #181E36 midnight canvas, #273054 deep periwinkle, #4D5A8F royal indigo, #6D7CB0 iris, #8F9DCC sky lavender, #B3C0E6 muted ice, #CED8F2 powder mist, #E3EAFA cloud, and #F5F8FF porcelain white.
+              Uxintace Gradient Palette: #0B2224 Oceanic Abyss canvas, #153B3E Deep Teal Card, #2C98A0 Ocean Teal, #4CC8A3 Bright Mint Teal accents, and #B0F2BC Pale Seafoam.
             </p>
           </div>
-          <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-[#E3EAFA] text-[#181E36] border border-[#8F9DCC]/40">
+          <span className="text-xs font-mono font-bold px-2.5 py-1 rounded-full bg-[#B0F2BC] text-[#0B2224] border border-[#4CC8A3]/40">
             {UI_THEMES.find((t) => t.id === theme)?.name} Active
           </span>
         </div>
@@ -118,7 +118,7 @@ export default function Settings() {
                 }}
                 className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between group ${
                   isSelected
-                    ? 'border-[#8F9DCC] ring-2 ring-[#8F9DCC]/25 shadow-lg'
+                    ? 'border-[#4CC8A3] ring-2 ring-[#4CC8A3]/25 shadow-lg'
                     : 'neu-card neu-card-hover'
                 }`}
               >
@@ -134,8 +134,8 @@ export default function Settings() {
                       {t.name}
                     </span>
                     {isSelected && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#E3EAFA] text-[#181E36] border border-[#8F9DCC]/40 flex items-center gap-1">
-                        <CheckCircle2 className="w-3 h-3 text-[#181E36]" /> Active
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#B0F2BC] text-[#0B2224] border border-[#4CC8A3]/40 flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3 text-[#0B2224]" /> Active
                       </span>
                     )}
                   </div>
@@ -159,7 +159,7 @@ export default function Settings() {
                       <span className="w-4 h-4 rounded-full border border-white/20 shadow-sm" style={{ backgroundColor: t.accentColor }} title="Accent" />
                     )}
                   </div>
-                  <span className="text-[11px] font-semibold text-[#8F9DCC] group-hover:text-[#F5F8FF]">
+                  <span className="text-[11px] font-semibold text-[#4CC8A3] group-hover:text-white">
                     {isSelected ? 'Selected' : 'Apply Theme'}
                   </span>
                 </div>
