@@ -231,33 +231,23 @@
      NEUMORPHIC UTILITIES (Extruded & Debossed Soft UI)
      ========================================================= */
 
-  /* Raised / Extruded Soft Card */
-  .glass-card, .neu-card {
-    background: linear-gradient(145deg, var(--bg-card), var(--bg-base));
-    border-radius: 1.25rem;
-    box-shadow: 6px 6px 16px var(--neu-shadow-dark), -4px -4px 12px var(--neu-shadow-light);
-    border: 1px solid var(--neu-border);
+  /* Boxless / Flat Containers (all card, panel, inset, and pill boxes removed) */
+  .glass-card, .neu-card,
+  .glass-panel, .neu-panel,
+  .neu-inset,
+  .neu-pill {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .glass-card-hover:hover, .neu-card-hover:hover {
-    box-shadow: 10px 10px 22px var(--neu-shadow-dark), -6px -6px 16px var(--neu-shadow-light-strong);
-    transform: translateY(-2px);
-    border-color: var(--border-hover);
-  }
-
-  /* Flat / Recessed Panel */
-  .glass-panel, .neu-panel {
-    background-color: var(--bg-base);
-    box-shadow: 5px 5px 12px var(--neu-shadow-dark), -3px -3px 8px var(--neu-shadow-light);
-    border: 1px solid var(--border-subtle);
-  }
-
-  /* Sunken / Inset Debossed Well */
-  .neu-inset {
-    background-color: var(--bg-surface-light, #F8F9FA);
-    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-subtle, #E5E7EB);
+    box-shadow: none !important;
+    transform: none !important;
+    border-color: transparent !important;
   }
 
   [data-theme="barvinok-dark"] .neu-inset,
@@ -265,9 +255,10 @@
   [data-theme="olivar-midnight"] .neu-inset,
   [data-theme="bankio-dark"] .neu-inset,
   [data-theme="monochrome-black"] .neu-inset {
-    background-color: var(--bg-deep);
-    box-shadow: inset 4px 4px 9px var(--neu-shadow-dark), inset -3px -3px 7px var(--neu-shadow-light);
-    border: 1px solid var(--border-subtle);
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
   }
 
   /* Tactile Neumorphic Buttons */
@@ -359,46 +350,21 @@
     color: #000000 !important;
   }
 
-  /* Deep Oceanic Abyss Highlight Card */
+  /* Highlight Cards (boxless) */
   .barvinok-highlight-card,
   .groza-highlight-card,
   .olivar-highlight-card,
   .bankio-pine-card {
-    background: linear-gradient(145deg, #153B3E, #0B2224) !important;
-    color: #FFFFFF !important;
-    border: 1px solid #2C98A0 !important;
-    box-shadow: 0 8px 24px rgba(11, 34, 36, 0.6), inset 0 1px 0 rgba(176, 242, 188, 0.1) !important;
-  }
-  .barvinok-highlight-card *,
-  .groza-highlight-card *,
-  .olivar-highlight-card *,
-  .bankio-pine-card * {
-    color: #FFFFFF !important;
-  }
-
-  /* Soft Neumorphic Pill */
-  .neu-pill {
-    background-color: var(--bg-card);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--neu-border, #24656B);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 
   .glow-border {
     position: relative;
   }
   .glow-border::after {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    background: var(--gradient-glow);
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0.2;
-    filter: blur(8px);
-    transition: opacity 0.3s ease;
-  }
-  .glow-border:hover::after {
-    opacity: 0.5;
+    display: none;
   }
 }
 
